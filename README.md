@@ -28,7 +28,7 @@ Then open http://localhost:8000 in your browser. Press `Ctrl+C` to stop. (Links 
 
 All money links live in one place: the `SETTINGS` block at the top of `main.js`.
 
-- `checkout.guide`, `checkout.templates`, `checkout.bundle`: Lemon Squeezy checkout links. Lemon Squeezy hosts the files, takes payment and handles sales tax/VAT. Once a link is set, its buy buttons open checkout as an overlay and the "notify me" launch-list section on that page is hidden.
+- `checkout.guide`, `checkout.templates`, `checkout.bundle`: Stripe Payment Links (or Lemon Squeezy checkout links, which open as an overlay). Once a link is set, its buy buttons go to checkout and the "notify me" launch-list section on that page is hidden.
 - `booking`: your Calendly / Cal.com / TidyCal link. Every "Book a discovery call" button uses it; when empty they go to the contact form.
 
 Empty links fall back safely, so the site never shows a broken button.

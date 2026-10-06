@@ -3,7 +3,7 @@
 // Leave a link empty ('') and its buttons fall back to the launch list or the
 // contact form, so the site never shows a broken button.
 var SETTINGS = {
-  // Lemon Squeezy checkout links (Store > Products > Share > copy link)
+  // Checkout links: Stripe Payment Links or Lemon Squeezy checkout links
   checkout: {
     guide: '',      // The AI Client Playbook, $29
     templates: '',  // The AI Client Kit, $49
@@ -16,19 +16,25 @@ var SETTINGS = {
 
 // Buy buttons: <a data-buy="guide|templates|bundle">
 var hasCheckout = false;
+var useLemon = false;
 document.querySelectorAll('[data-buy]').forEach(function (btn) {
   var url = SETTINGS.checkout[btn.getAttribute('data-buy')];
   if (!url) return;
   btn.href = url;
-  btn.classList.add('lemonsqueezy-button'); // opens checkout as an overlay
+  if (url.indexOf('lemonsqueezy.com') !== -1) {
+    btn.classList.add('lemonsqueezy-button'); // opens checkout as an overlay
+    useLemon = true;
+  }
   hasCheckout = true;
 });
-if (hasCheckout) {
+if (useLemon) {
   // Lemon Squeezy overlay checkout; without it, links still open the checkout page
   var ls = document.createElement('script');
   ls.src = 'https://app.lemonsqueezy.com/js/lemon.js';
   ls.defer = true;
   document.head.appendChild(ls);
+}
+if (hasCheckout) {
   // Launch-list sections are only needed until checkout is live
   document.querySelectorAll('[data-prelaunch]').forEach(function (el) { el.hidden = true; });
   // Hide any buy button whose product has no link yet (its launch list is hidden too)
