@@ -24,3 +24,14 @@
   for = "/*.(css|js|jpg|svg)"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# Keep purchase pages and product files out of search engines
+[[headers]]
+  for = "/thanks/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/files/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

@@ -3,7 +3,11 @@
 // Leave a link empty ('') and its buttons fall back to the launch list or the
 // contact form, so the site never shows a broken button.
 var SETTINGS = {
-  // Checkout links: Stripe Payment Links or Lemon Squeezy checkout links
+  // Checkout links: Stripe Payment Links or Lemon Squeezy checkout links.
+  // Stripe links are ready; paste them in once the product files are in /files:
+  //   guide:     https://buy.stripe.com/4gMaEX2Fg084ei2dU387K00
+  //   templates: https://buy.stripe.com/4gM8wPenY8EAei2dU387K01
+  //   bundle:    https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02
   checkout: {
     guide: '',      // The AI Client Playbook, $29
     templates: '',  // The AI Client Kit, $49

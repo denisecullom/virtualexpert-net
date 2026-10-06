@@ -272,3 +272,6 @@ ul.check li::before { content: ""; position: absolute; left: 0; top: 0.5em; widt
   .section { padding: 0; }
   .prompt { break-inside: avoid; border: 1px solid #ccc; }
 }
+
+/* Download pages */
+.download-list { list-style: none; display: grid; gap: 12px; justify-items: center; margin: 8px 0 20px; }
