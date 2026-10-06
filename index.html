@@ -29,6 +29,7 @@
       <a href="/" class="logo">VirtualExpert<span>.net</span></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="/free-prompts">Free prompts</a>
         <a href="/guide">The Guide</a>
         <a href="/templates">Templates</a>
         <a href="/consulting">Consulting</a>
@@ -48,7 +49,7 @@
           <p class="lead">A practical system for finding the right prospects, writing outreach that gets replies, and following up until they say yes. Built by an operator who scaled a company from $5M to $16M.</p>
           <div class="cta-row">
             <a href="/guide" class="btn btn-primary">Get the Guide</a>
-            <a href="#offers" class="btn btn-ghost">See all options</a>
+            <a href="/free-prompts" class="btn btn-ghost">Free: 10 client-getting prompts</a>
           </div>
           <p class="hero-byline">By <strong>Denise Cullom</strong>, former COO with 25+ years in sales, operations and revenue.</p>
         </div>
@@ -192,18 +193,19 @@
       <div class="container">
         <div class="band">
           <div>
-            <h2>Get the weekly AI client tip.</h2>
-            <p>One practical prompt, script or follow-up idea each week. Plus first access to new guides and templates.</p>
+            <p class="eyebrow" style="color:#7dd3c8">Free download</p>
+            <h2>10 AI prompts to land your next client.</h2>
+            <p>The exact prompts I'd use to find prospects, write a first message and follow up. Copy, paste, send. Plus a weekly tip by email.</p>
           </div>
           <div>
-            <form class="inline-form js-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="website">
-              <input type="hidden" name="form-name" value="newsletter">
+            <form class="inline-form js-form" name="free-prompts" method="POST" data-netlify="true" netlify-honeypot="website" data-next="/prompts-download">
+              <input type="hidden" name="form-name" value="free-prompts">
+              <input type="hidden" name="source" value="home">
               <p class="sr-only" aria-hidden="true"><label>Leave this empty: <input name="website" tabindex="-1" autocomplete="off"></label></p>
               <label class="sr-only" for="nl-email">Email</label>
               <input id="nl-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-              <button type="submit" class="btn btn-light">Subscribe</button>
+              <button type="submit" class="btn btn-light">Send me the prompts</button>
             </form>
-            <p class="form-msg" data-ok role="status" hidden>You're in. Your first tip is on its way.</p>
             <p class="form-msg form-error" data-error role="alert" hidden>Something went wrong. Please try again in a moment.</p>
           </div>
         </div>
@@ -216,6 +218,7 @@
     <div class="container footer-inner">
       <a href="/" class="logo">VirtualExpert<span>.net</span></a>
       <div class="footer-links">
+        <a href="/free-prompts">Free prompts</a>
         <a href="/guide">Guide</a>
         <a href="/templates">Templates</a>
         <a href="/consulting">Consulting</a>

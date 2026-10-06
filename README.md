@@ -14,7 +14,8 @@ Then open http://localhost:8000 in your browser. Press `Ctrl+C` to stop. (Links 
 
 ## Pages
 
-- `index.html`: homepage (problem, 4-step system, offer ladder, about, FAQ, newsletter signup)
+- `index.html`: homepage (problem, 4-step system, offer ladder, about, FAQ, free-prompts signup)
+- `free-prompts.html`, `prompts-download.html`: free lead magnet and its delivery page
 - `guide.html`: **The AI Client Playbook**, $29 guide
 - `templates.html`: **The AI Client Kit**, $49 template pack (prompts, outreach scripts, follow-up sequences)
 - `consulting.html`: **Client Pipeline Audit**, 1:1 consulting
@@ -23,16 +24,25 @@ Then open http://localhost:8000 in your browser. Press `Ctrl+C` to stop. (Links 
 - `main.js`: mobile menu, footer year, and in-page form submission
 - `sitemap.xml`, `robots.txt`: help search engines find every page
 
-## Turning on sales
+## Making money: the settings block
 
-The buy buttons on the Guide and Templates pages point to a "Notify me" launch list for now. When a product is ready, create a checkout link (Gumroad, Lemon Squeezy or a Stripe Payment Link) and replace `href="#notify"` on the button marked `data-buy="guide"` or `data-buy="templates"`. You can then delete that page's `#notify` section.
+All money links live in one place: the `SETTINGS` block at the top of `main.js`.
+
+- `checkout.guide`, `checkout.templates`, `checkout.bundle`: Lemon Squeezy checkout links. Lemon Squeezy hosts the files, takes payment and handles sales tax/VAT. Once a link is set, its buy buttons open checkout as an overlay and the "notify me" launch-list section on that page is hidden.
+- `booking`: your Calendly / Cal.com / TidyCal link. Every "Book a discovery call" button uses it; when empty they go to the contact form.
+
+Empty links fall back safely, so the site never shows a broken button.
+
+## Free lead magnet
+
+`/free-prompts` collects an email (Netlify form **free-prompts**) and sends people to `/prompts-download`, an unlisted page with the 10 prompts, copy buttons and "Save as PDF". The homepage has the same signup. The download page links to the paid Kit and Playbook.
 
 ## Forms
 
 All forms use Netlify Forms. Submissions appear in the Netlify dashboard under **Forms**:
 
 - **contact**: contact and discovery-call requests
-- **newsletter**: weekly tip signups from the homepage
+- **free-prompts**: lead-magnet signups (homepage and `/free-prompts`)
 - **launch-list**: "notify me" signups, with a `product` field (`guide` or `templates`)
 
 Forms only work on the live site, not in the local preview. To get emailed on each submission, add a notification in Netlify under **Site configuration → Notifications → Emails and webhooks → Form submission notifications**.

@@ -257,3 +257,18 @@ ul.check li::before { content: ""; position: absolute; left: 0; top: 0.5em; widt
 @media (max-width: 520px) {
   .grid-4, .steps, .stats { grid-template-columns: 1fr; }
 }
+
+/* Free prompts */
+.prompt-list { list-style: none; display: grid; gap: 18px; }
+.prompt-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.prompt-head b { font-family: var(--serif); color: var(--accent); font-size: 1.2rem; }
+.prompt-head h3 { margin: 0; flex: 1; }
+.prompt-text { background: var(--bg); border-radius: 10px; padding: 16px; color: var(--text) !important; font-size: 0.97rem; }
+.prompt .copy { margin-top: 14px; }
+.buy-box .btn + .btn { margin-top: 10px; }
+@media print {
+  .nav, .footer, .no-print, .copy, .skip { display: none !important; }
+  body { background: #fff; font-size: 12pt; }
+  .section { padding: 0; }
+  .prompt { break-inside: avoid; border: 1px solid #ccc; }
+}
