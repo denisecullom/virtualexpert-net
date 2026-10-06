@@ -10,7 +10,7 @@ var SETTINGS = {
     bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02'      // Playbook + Kit bundle, $59
   },
   // Booking link for discovery calls (Calendly, Cal.com, TidyCal, etc.)
-  booking: 'https://calendar.app.google/b2kvf5ZxwJuzUMPZ8'
+  booking: 'https://cal.com/denise-cullom/discovery-call'
 };
 // ---------------------------------------------------------------------------
 
