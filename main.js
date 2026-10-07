@@ -12,7 +12,7 @@ var SETTINGS = {
   // Booking link for discovery calls (Calendly, Cal.com, TidyCal, etc.)
   booking: 'https://cal.com/denise-cullom/discovery-call',
   // Google Analytics 4 measurement ID (looks like 'G-XXXXXXXXXX'). Empty = off.
-  analytics: ''
+  analytics: 'G-XB3F9LCWN7'
 };
 // ---------------------------------------------------------------------------
 
