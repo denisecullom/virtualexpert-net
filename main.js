@@ -10,9 +10,46 @@ var SETTINGS = {
     bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02'      // Playbook + Kit bundle, $59
   },
   // Booking link for discovery calls (Calendly, Cal.com, TidyCal, etc.)
-  booking: 'https://cal.com/denise-cullom/discovery-call'
+  booking: 'https://cal.com/denise-cullom/discovery-call',
+  // Google Analytics 4 measurement ID (looks like 'G-XXXXXXXXXX'). Empty = off.
+  analytics: ''
 };
 // ---------------------------------------------------------------------------
+
+// Google Analytics: loads only when SETTINGS.analytics has an ID.
+// track() is safe to call either way; it does nothing when analytics is off.
+var PRODUCTS = {
+  guide: { item_id: 'guide', item_name: 'The AI Client Playbook', price: 29 },
+  templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49 },
+  bundle: { item_id: 'bundle', item_name: 'Playbook + Kit bundle', price: 59 }
+};
+window.dataLayer = window.dataLayer || [];
+function gtag() { window.dataLayer.push(arguments); }
+function track(name, params) {
+  if (SETTINGS.analytics) gtag('event', name, params || {});
+}
+if (SETTINGS.analytics) {
+  var ga = document.createElement('script');
+  ga.async = true;
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + SETTINGS.analytics;
+  document.head.appendChild(ga);
+  gtag('js', new Date());
+  gtag('config', SETTINGS.analytics);
+}
+
+// Purchases: Stripe sends buyers to /thanks/playbook|kit|bundle?session_id=...
+// The session ID doubles as the transaction ID, so a reload isn't counted twice.
+var thanks = window.location.pathname.match(/^\/thanks\/(playbook|kit|bundle)/);
+var sessionId = new URLSearchParams(window.location.search).get('session_id');
+if (thanks && sessionId) {
+  var bought = PRODUCTS[{ playbook: 'guide', kit: 'templates', bundle: 'bundle' }[thanks[1]]];
+  track('purchase', {
+    transaction_id: sessionId,
+    value: bought.price,
+    currency: 'USD',
+    items: [bought]
+  });
+}
 
 // Buy buttons: <a data-buy="guide|templates|bundle">
 var hasCheckout = false;
@@ -26,6 +63,10 @@ document.querySelectorAll('[data-buy]').forEach(function (btn) {
     useLemon = true;
   }
   hasCheckout = true;
+  btn.addEventListener('click', function () {
+    var item = PRODUCTS[btn.getAttribute('data-buy')];
+    track('begin_checkout', { value: item.price, currency: 'USD', items: [item] });
+  });
 });
 if (useLemon) {
   // Lemon Squeezy overlay checkout; without it, links still open the checkout page
@@ -49,6 +90,9 @@ if (SETTINGS.booking) {
     btn.href = SETTINGS.booking;
     btn.target = '_blank';
     btn.rel = 'noopener';
+    btn.addEventListener('click', function () {
+      track('book_call_click', { page_path: window.location.pathname });
+    });
   });
 }
 
@@ -95,6 +139,9 @@ document.querySelectorAll('form.js-form').forEach(function (form) {
       body: new URLSearchParams(new FormData(form)).toString()
     }).then(function (res) {
       if (!res.ok) throw new Error(res.status);
+      track(form.getAttribute('name') === 'contact' ? 'contact_form_submit' : 'generate_lead', {
+        form_name: form.getAttribute('name')
+      });
       var next = form.getAttribute('data-next');
       if (next) { window.location.href = next; return; }
       if (ok) ok.hidden = false;
