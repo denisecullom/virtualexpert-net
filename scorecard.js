@@ -225,11 +225,11 @@ var TIERS = [
       return byArea[a.id].got - byArea[b.id].got;
     })[0];
     var tier = TIERS.filter(function (t) { return total >= t.min; })[0];
-    // Offer: established or high-scoring -> audit; middle -> Kit; low or brand new -> Playbook
-    // (people with no clients yet always start with the Playbook)
+    // Offer: established or high-scoring -> audit; middle -> bundle (adds the AI agents book to
+    // automate follow-up); low or brand new -> Playbook + Kit (no clients yet always starts there)
     var rec = 'guide';
     if (stage === 'over10k' || (total >= 65 && stage !== 'starting')) rec = 'audit';
-    else if (total >= 40 && stage !== 'starting') rec = 'templates';
+    else if (total >= 40 && stage !== 'starting') rec = 'bundle';
     return { total: total, byArea: byArea, leaks: leaks, weakest: weakest, tier: tier, stage: stage, rec: rec };
   }
 

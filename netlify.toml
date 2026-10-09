@@ -11,6 +11,12 @@
   status = 301
   force = true
 
+# The AI Client Kit is now included with the Playbook on /guide
+[[redirects]]
+  from = "/templates"
+  to = "/guide#kit"
+  status = 301
+
 # Basic security headers
 [[headers]]
   for = "/*"
