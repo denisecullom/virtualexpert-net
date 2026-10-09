@@ -5,9 +5,9 @@
 var SETTINGS = {
   // Checkout links: Stripe Payment Links or Lemon Squeezy checkout links.
   checkout: {
-    guide: 'https://buy.stripe.com/4gMaEX2Fg084ei2dU387K00',      // The AI Client Playbook, $29
-    templates: 'https://buy.stripe.com/4gM8wPenY8EAei2dU387K01',  // The AI Client Kit, $49
-    bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02'      // Playbook + Kit bundle, $59
+    guide: 'https://buy.stripe.com/4gMaEX2Fg084ei2dU387K00',   // The AI Client Playbook + Kit, $29
+    agents: 'https://buy.stripe.com/4gM00jcfQbQM4Hs17h87K03',  // 20 AI Agents That Pay for Themselves, $49
+    bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02'   // All three, $59
   },
   // Booking link for discovery calls (Calendly, Cal.com, TidyCal, etc.)
   booking: 'https://cal.com/denise-cullom/discovery-call',
@@ -19,9 +19,11 @@ var SETTINGS = {
 // Google Analytics: loads only when SETTINGS.analytics has an ID.
 // track() is safe to call either way; it does nothing when analytics is off.
 var PRODUCTS = {
-  guide: { item_id: 'guide', item_name: 'The AI Client Playbook', price: 29 },
-  templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49 },
-  bundle: { item_id: 'bundle', item_name: 'Playbook + Kit bundle', price: 59 }
+  guide: { item_id: 'guide', item_name: 'The AI Client Playbook + Kit', price: 29 },
+  agents: { item_id: 'agents', item_name: '20 AI Agents That Pay for Themselves', price: 49 },
+  bundle: { item_id: 'bundle', item_name: 'The Complete AI Bundle', price: 59 },
+  // Retired: the Kit is now part of the guide. Kept so /thanks/kit still records old-link purchases.
+  templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49 }
 };
 window.dataLayer = window.dataLayer || [];
 function gtag() { window.dataLayer.push(arguments); }
@@ -37,12 +39,12 @@ if (SETTINGS.analytics) {
   gtag('config', SETTINGS.analytics);
 }
 
-// Purchases: Stripe sends buyers to /thanks/playbook|kit|bundle?session_id=...
+// Purchases: Stripe sends buyers to /thanks/playbook|agents|bundle?session_id=...
 // The session ID doubles as the transaction ID, so a reload isn't counted twice.
-var thanks = window.location.pathname.match(/^\/thanks\/(playbook|kit|bundle)/);
+var thanks = window.location.pathname.match(/^\/thanks\/(playbook|agents|kit|bundle)/);
 var sessionId = new URLSearchParams(window.location.search).get('session_id');
 if (thanks && sessionId) {
-  var bought = PRODUCTS[{ playbook: 'guide', kit: 'templates', bundle: 'bundle' }[thanks[1]]];
+  var bought = PRODUCTS[{ playbook: 'guide', agents: 'agents', kit: 'templates', bundle: 'bundle' }[thanks[1]]];
   track('purchase', {
     transaction_id: sessionId,
     value: bought.price,
@@ -51,7 +53,7 @@ if (thanks && sessionId) {
   });
 }
 
-// Buy buttons: <a data-buy="guide|templates|bundle">
+// Buy buttons: <a data-buy="guide|agents|bundle">
 var hasCheckout = false;
 var useLemon = false;
 document.querySelectorAll('[data-buy]').forEach(function (btn) {
