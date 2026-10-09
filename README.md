@@ -16,6 +16,7 @@ Then open http://localhost:8000 in your browser. Press `Ctrl+C` to stop. (Links 
 
 - `index.html`: homepage (problem, 4-step system, offer ladder, about, FAQ, free-prompts signup)
 - `free-prompts.html`, `prompts-download.html`: free lead magnet and its delivery page
+- `scorecard.html`, `scorecard.js`: **AI Client Pipeline Scorecard**, a free 10-question quiz that scores the visitor's pipeline out of 100, asks for their email, then shows their three biggest leaks and recommends the Playbook, Kit or Audit. Questions, tips and score bands are at the top of `scorecard.js`
 - `guide.html`: **The AI Client Playbook**, $29 guide
 - `templates.html`: **The AI Client Kit**, $49 template pack (prompts, outreach scripts, follow-up sequences)
 - `consulting.html`: **Client Pipeline Audit**, 1:1 consulting
@@ -43,6 +44,7 @@ All forms use Netlify Forms. Submissions appear in the Netlify dashboard under *
 
 - **contact**: contact and discovery-call requests
 - **free-prompts**: lead-magnet signups (homepage and `/free-prompts`)
+- **scorecard**: scorecard leads, with their score, tier, business stage, weakest area, recommended offer and every answer
 - **launch-list**: "notify me" signups, with a `product` field (`guide` or `templates`)
 
 Forms only work on the live site, not in the local preview. To get emailed on each submission, add a notification in Netlify under **Site configuration → Notifications → Emails and webhooks → Form submission notifications**.
