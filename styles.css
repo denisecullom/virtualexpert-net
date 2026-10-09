@@ -275,3 +275,52 @@ ul.check li::before { content: ""; position: absolute; left: 0; top: 0.5em; widt
 
 /* Download pages */
 .download-list { list-style: none; display: grid; gap: 12px; justify-items: center; margin: 8px 0 20px; }
+
+/* Pipeline scorecard */
+.sc-progress { height: 6px; background: var(--bg-alt); border-radius: 999px; overflow: hidden; margin-bottom: 28px; }
+.sc-progress span { display: block; height: 100%; background: var(--accent); border-radius: 999px; transition: width .25s; }
+.sc-question { border: 0; }
+.sc-question legend { width: 100%; }
+.sc-question h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); outline: none; }
+.sc-options { display: grid; gap: 12px; margin-top: 8px; }
+.sc-option {
+  font: inherit; text-align: left; padding: 16px 20px; border-radius: 12px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  transition: border-color .15s, background .15s;
+}
+.sc-option:hover, .sc-option:focus-visible { border-color: var(--accent); background: var(--accent-soft); outline: none; }
+.sc-option.selected { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.sc-nav { margin-top: 24px; }
+.sc-score-grid { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: center; margin-bottom: 56px; }
+.sc-score-grid h1 { font-size: clamp(2.2rem, 4.4vw, 3.2rem); outline: none; }
+.sc-dial { position: relative; width: 220px; height: 220px; }
+.sc-dial svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.sc-dial circle { fill: none; stroke-width: 10; }
+.sc-dial-track { stroke: var(--bg-alt); }
+.sc-dial-fill { stroke: var(--accent); stroke-linecap: round; transition: stroke-dashoffset .8s ease-out; }
+.sc-dial-num { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.sc-dial-num b { font-family: var(--serif); font-size: 4rem; font-weight: 600; line-height: 1; }
+.sc-dial-num span { font-size: 0.9rem; color: var(--muted); }
+.sc-subhead { font-size: 1.6rem; margin: 0 0 18px; }
+.sc-areas { display: grid; gap: 14px; margin-bottom: 56px; max-width: 760px; }
+.sc-area { display: grid; grid-template-columns: 190px 1fr 48px; gap: 16px; align-items: center; font-size: 0.97rem; }
+.sc-area b { text-align: right; }
+.sc-area-bar { height: 12px; background: var(--bg-alt); border-radius: 999px; overflow: hidden; }
+.sc-area-bar span { display: block; height: 100%; background: var(--teal); border-radius: 999px; }
+.sc-area.weakest .sc-area-bar span { background: var(--accent); }
+.sc-area.weakest .sc-area-name::after { content: "weakest"; display: block; color: var(--accent); font-size: 0.78rem; line-height: 1.2; }
+.sc-leaks { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: leak; }
+.sc-leaks li { counter-increment: leak; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
+.sc-leaks li::before { content: counter(leak); display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-dark); font-weight: 700; margin-bottom: 14px; }
+.sc-leaks li p { color: var(--muted); font-size: 0.96rem; }
+.sc-leaks .sc-leak-area { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+.sc-link { background: none; border: 0; font: inherit; color: var(--accent); text-decoration: underline; cursor: pointer; }
+@media (max-width: 960px) {
+  .sc-leaks { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .sc-score-grid { grid-template-columns: 1fr; gap: 24px; }
+  .sc-dial { width: 170px; height: 170px; }
+  .sc-dial-num b { font-size: 3rem; }
+  .sc-area { grid-template-columns: 110px 1fr 44px; gap: 10px; }
+}

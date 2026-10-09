@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free: The AI Client Pipeline Scorecard | VirtualExpert.net</title>
+  <meta name="description" content="Answer 10 quick questions and get your client pipeline score out of 100, your three biggest leaks, and what to fix first.">
+  <link rel="canonical" href="https://virtualexpert.net/scorecard">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VirtualExpert.net">
+  <meta property="og:title" content="Free: The AI Client Pipeline Scorecard | VirtualExpert.net">
+  <meta property="og:description" content="Answer 10 quick questions and get your client pipeline score out of 100, your three biggest leaks, and what to fix first.">
+  <meta property="og:url" content="https://virtualexpert.net/scorecard">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/guide">The Guide</a>
+        <a href="/templates">Templates</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/about">About</a>
+        <a href="/contact" class="btn btn-primary btn-sm">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Step 1: intro -->
+    <section class="hero" id="sc-intro">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Free 3-minute scorecard</p>
+          <h1>How healthy is your <em>client pipeline</em>?</h1>
+          <p class="lead">Answer 10 quick questions about how you find, reach, follow up with and close clients. You'll get a score out of 100, your three biggest leaks, and what to fix first.</p>
+          <div class="cta-row">
+            <button type="button" class="btn btn-primary" id="sc-start">Start the scorecard</button>
+          </div>
+          <noscript><p class="form-msg form-error">The scorecard needs JavaScript. Please turn it on, or <a href="/contact?topic=audit">contact me</a> for a pipeline review.</p></noscript>
+          <p class="hero-byline">Built by <strong>Denise Cullom</strong>, former COO who scaled a company from $5M to $16M.</p>
+        </div>
+        <div class="card">
+          <h3>What it checks</h3>
+          <ul class="check" style="margin-top:14px">
+            <li><strong>Find:</strong> who you target and where leads come from</li>
+            <li><strong>Reach:</strong> how many conversations you start, and how</li>
+            <li><strong>Follow up:</strong> what happens when nobody replies</li>
+            <li><strong>Close:</strong> calls, proposals and conversion</li>
+            <li><strong>AI and routine:</strong> whether the system runs every week</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 2: questions, one at a time -->
+    <section class="section" id="sc-quiz" hidden>
+      <div class="container narrow">
+        <div class="sc-progress" aria-hidden="true"><span id="sc-bar"></span></div>
+        <p class="eyebrow" id="sc-count"></p>
+        <fieldset class="sc-question">
+          <legend><h2 id="sc-q" tabindex="-1"></h2></legend>
+          <div class="sc-options" id="sc-options"></div>
+        </fieldset>
+        <div class="sc-nav">
+          <button type="button" class="btn btn-ghost" id="sc-back">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3: email before results -->
+    <section class="section" id="sc-gate" hidden>
+      <div class="container narrow center">
+        <p class="eyebrow">Your score is ready</p>
+        <h2 tabindex="-1">Where should I send your results?</h2>
+        <p class="section-lead">Your score and action plan appear on the next screen. I'll also send you one practical tip a week for filling your pipeline.</p>
+        <div class="card" style="text-align:left">
+          <form class="form" id="sc-form" name="scorecard" method="POST" data-netlify="true" netlify-honeypot="website">
+            <input type="hidden" name="form-name" value="scorecard">
+            <input type="hidden" name="score">
+            <input type="hidden" name="tier">
+            <input type="hidden" name="stage">
+            <input type="hidden" name="weakest_area">
+            <input type="hidden" name="recommended">
+            <input type="hidden" name="answers">
+            <p class="sr-only" aria-hidden="true"><label>Leave this empty: <input name="website" tabindex="-1" autocomplete="off"></label></p>
+            <label>First name<input type="text" name="name" autocomplete="given-name"></label>
+            <label>Email<input type="email" name="email" autocomplete="email" required></label>
+            <button type="submit" class="btn btn-primary">Show my score</button>
+          </form>
+          <p class="form-consent">Unsubscribe anytime. See the <a href="/privacy">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 4: results -->
+    <div id="sc-results" hidden>
+      <section class="section">
+        <div class="container">
+          <div class="sc-score-grid">
+            <div class="sc-dial" id="sc-dial" role="img">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle cx="60" cy="60" r="52" class="sc-dial-track"/>
+                <circle cx="60" cy="60" r="52" class="sc-dial-fill" id="sc-dial-fill"/>
+              </svg>
+              <div class="sc-dial-num"><b id="sc-score"></b><span>out of 100</span></div>
+            </div>
+            <div>
+              <p class="eyebrow">Your pipeline score</p>
+              <h1 id="sc-tier" tabindex="-1"></h1>
+              <p class="lead" id="sc-summary"></p>
+            </div>
+          </div>
+
+          <h2 class="sc-subhead">Score by stage</h2>
+          <div class="sc-areas" id="sc-areas"></div>
+
+          <h2 class="sc-subhead" id="sc-leaks-title">Your three biggest leaks</h2>
+          <p class="section-lead">These are the answers that cost you the most points. Fix them in this order.</p>
+          <ol class="sc-leaks" id="sc-leaks"></ol>
+        </div>
+      </section>
+
+      <!-- Recommendation: one of these is shown -->
+      <section class="section alt" data-rec="guide" hidden>
+        <div class="container product-grid">
+          <div>
+            <p class="eyebrow">Your best next step</p>
+            <h2>Start with the system: The AI Client Playbook.</h2>
+            <p class="section-lead">Your score says the foundations need work first: who you serve, a weekly outreach routine and a simple follow-up habit. The Playbook walks you through all of it, step by step, with AI doing the heavy lifting.</p>
+            <a href="/guide">See what's inside &rarr;</a>
+          </div>
+          <div class="buy-box">
+            <p class="eyebrow">The AI Client Playbook</p>
+            <p class="price">$29</p>
+            <p>19-page guide, from niche to signed contract.</p>
+            <a href="/guide" class="btn btn-primary" data-buy="guide">Get the Playbook</a>
+            <a href="/templates" class="btn btn-ghost" data-buy="bundle">Get the Playbook + Kit for $59</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" data-rec="templates" hidden>
+        <div class="container product-grid">
+          <div>
+            <p class="eyebrow">Your best next step</p>
+            <h2>Plug the leaks fast: The AI Client Kit.</h2>
+            <p class="section-lead">You've got a working base. What's costing you clients is the day-to-day: messages that take too long, follow-ups that slip, proposals that wait. The Kit gives you the prompts, scripts and sequences to fix that this week.</p>
+            <a href="/templates">See what's inside &rarr;</a>
+          </div>
+          <div class="buy-box">
+            <p class="eyebrow">The AI Client Kit</p>
+            <p class="price">$49</p>
+            <p>110 prompts, 30 outreach scripts, 5 follow-up sequences and a pipeline tracker.</p>
+            <a href="/templates" class="btn btn-primary" data-buy="templates">Get the Kit</a>
+            <a href="/templates" class="btn btn-ghost" data-buy="bundle">Get the Kit + Playbook for $59</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" data-rec="audit" hidden>
+        <div class="container product-grid">
+          <div>
+            <p class="eyebrow">Your best next step</p>
+            <h2>Get an expert eye on it: the Client Pipeline Audit.</h2>
+            <p class="section-lead">You're past the basics, so generic advice won't move the needle. In the audit I review your offer, outreach, follow-up and sales calls, then hand you a prioritized plan and the AI workflows that will save you the most time.</p>
+            <a href="/consulting">How the audit works &rarr;</a>
+          </div>
+          <div class="buy-box">
+            <p class="eyebrow">Client Pipeline Audit</p>
+            <p class="price">1:1</p>
+            <p>Start with a free 20-minute discovery call.</p>
+            <a href="/contact?topic=audit" class="btn btn-primary" data-book>Book a discovery call</a>
+            <a href="/templates" class="btn btn-ghost">Or start with the $49 Kit</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tight">
+        <div class="container narrow center">
+          <p class="form-consent"><button type="button" class="sc-link" id="sc-retake">Retake the scorecard</button></p>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <div class="footer-links">
+        <a href="/scorecard">Pipeline scorecard</a>
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/ai-workforce">AI workforce guide</a>
+        <a href="/guide">Guide</a>
+        <a href="/templates">Templates</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+      <span>&copy; <span class="year"></span> VirtualExpert.net</span>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+  <script src="/scorecard.js"></script>
+</body>
+</html>
