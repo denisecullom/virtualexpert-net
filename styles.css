@@ -226,6 +226,28 @@ ul.check li::before { content: ""; position: absolute; left: 0; top: 0.5em; widt
 .prose ul { margin: 12px 0 12px 22px; }
 .prose li { margin-bottom: 6px; }
 
+/* Articles */
+.article-hero { padding: 72px 0 40px; }
+.article-hero .eyebrow a { color: inherit; text-decoration: none; }
+.article-hero h1 { font-size: clamp(2.2rem, 4.6vw, 3.4rem); }
+.article-meta { font-size: 0.92rem; color: var(--muted); }
+.article-body { padding-bottom: 96px; }
+.article-body.prose { max-width: 760px; }
+.article-body h2 { margin-top: 48px; }
+.prose ol { margin: 12px 0 12px 22px; }
+.article-body .prompt { margin: 24px 0; }
+.article-body .prompt-text { margin: 0; }
+.prose blockquote.example { background: var(--surface); border-left: 3px solid var(--teal); border-radius: 8px; padding: 18px 22px; margin: 16px 0; font-size: 0.98rem; }
+.article-cta { margin: 40px 0 24px; border: 2px solid var(--accent); }
+.article-cta h3 { font-size: 1.5rem; }
+.article-cta .eyebrow { color: var(--teal); }
+.article-aside { color: var(--muted); }
+.article-list { list-style: none; display: grid; gap: 20px; }
+.article-list h2 { font-size: 1.6rem; margin: 6px 0 10px; }
+.article-list h2 a { color: var(--text); text-decoration: none; }
+.article-list h2 a:hover { color: var(--accent); }
+.article-list .btn { margin-top: 16px; }
+
 /* Footer */
 .footer { border-top: 1px solid var(--border); padding: 40px 0; font-size: 0.92rem; color: var(--muted); }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
