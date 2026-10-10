@@ -287,6 +287,12 @@ ul.check li::before { content: ""; position: absolute; left: 0; top: 0.5em; widt
 .prompt-head h3 { margin: 0; flex: 1; }
 .prompt-text { background: var(--bg); border-radius: 10px; padding: 16px; color: var(--text) !important; font-size: 0.97rem; }
 .prompt .copy { margin-top: 14px; }
+.prompt-text.multi { white-space: pre-line; }
+.prompt-when { color: var(--muted); font-size: 0.95rem; margin: -4px 0 12px; }
+.prompt-then { margin: 14px 0 0; font-size: 0.95rem; }
+.prompt-stage { margin: 48px 0 18px; }
+.prompt-howto { margin-top: 24px; }
+.prompt-howto ol { padding-left: 20px; display: grid; gap: 6px; }
 .buy-box .btn + .btn { margin-top: 10px; }
 @media print {
   .nav, .footer, .no-print, .copy, .skip { display: none !important; }
