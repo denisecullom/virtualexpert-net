@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Should a Company Start Implementing AI? A Step-by-Step Plan | VirtualExpert.net</title>
+  <meta name="description" content="Start with two or three business goals, map the workflows behind them, match each one to the right level of AI, pilot with one team, set simple guardrails, train people, then measure and expand. A plain-English rollout plan for small and mid-sized companies.">
+  <link rel="canonical" href="https://virtualexpert.net/blog/how-to-implement-ai-in-your-company">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="VirtualExpert.net">
+  <meta property="og:title" content="How Should a Company Start Implementing AI?">
+  <meta property="og:description" content="Seven steps for rolling out AI in a small or mid-sized company, the three levels of AI workflows, and how to get your team to actually use it.">
+  <meta property="og:url" content="https://virtualexpert.net/blog/how-to-implement-ai-in-your-company">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","headline":"How Should a Company Start Implementing AI? A Step-by-Step Plan","description":"Seven steps for rolling out AI in a small or mid-sized company, the three levels of AI workflows, the guardrails to set, and how to get a team to actually use it.","datePublished":"2026-10-16","dateModified":"2026-10-16","author":{"@type":"Person","name":"Denise Cullom","url":"https://virtualexpert.net/about"},"publisher":{"@type":"Organization","name":"VirtualExpert.net","url":"https://virtualexpert.net"},"mainEntityOfPage":"https://virtualexpert.net/blog/how-to-implement-ai-in-your-company","about":["AI implementation","AI strategy","AI adoption","Small and mid-sized business","Change management"]},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Articles","item":"https://virtualexpert.net/blog"},{"@type":"ListItem","position":2,"name":"How should a company start implementing AI?","item":"https://virtualexpert.net/blog/how-to-implement-ai-in-your-company"}]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How long does it take to implement AI in a small or mid-sized company?","acceptedAnswer":{"@type":"Answer","text":"A focused first rollout takes about 90 days: two to three weeks to pick goals and map workflows, 30 to 60 days to pilot with one team, and the rest to train people and decide what to expand. Company-wide adoption usually happens in waves over 6 to 12 months, one department or workflow at a time."}},
+      {"@type":"Question","name":"How much does it cost to implement AI in a company?","acceptedAnswer":{"@type":"Answer","text":"The tools are usually the smallest cost. Business plans for AI assistants like Claude or ChatGPT cost roughly $25 to $30 per person per month at the time of writing, and automation platforms add a monthly fee based on volume. The bigger costs are the time to design workflows, train people and connect systems, plus any outside builders for custom integrations. Start with a pilot so you know the savings before you spend on a wider rollout."}},
+      {"@type":"Question","name":"Do we need an in-house AI team to get started?","acceptedAnswer":{"@type":"Answer","text":"No. Most small and mid-sized companies start with one executive sponsor, one owner for the rollout and a champion in each pilot team. Off-the-shelf AI assistants cover most early work. Developers or automation specialists are only needed when you connect systems or build custom tools, and they can be brought in per project."}},
+      {"@type":"Question","name":"Which department should use AI first?","acceptedAnswer":{"@type":"Answer","text":"Start where the work is high-volume, repetitive and easy to measure, and where the team lead is willing. Operations, customer service, sales follow-up and finance reporting are common first choices. Avoid starting with the most sensitive work, like HR decisions or anything involving regulated data, until your guardrails are in place."}},
+      {"@type":"Question","name":"What are the three levels of AI workflows?","acceptedAnswer":{"@type":"Answer","text":"Level 1 is human-in-the-loop work, where AI drafts, researches or suggests and a person reviews and approves. Level 2 is full automation, where software moves data between systems along fixed rules with no one touching it. Level 3 is AI-intelligent workflows, where AI agents read context, make decisions within limits you set and hand exceptions to a person. Most companies need a mix, matched to each workflow's risk, volume and how much it varies."}},
+      {"@type":"Question","name":"Why do most company AI projects fail?","acceptedAnswer":{"@type":"Answer","text":"The usual causes are buying tools before defining the problem, running scattered experiments with no owner, skipping training, never measuring a baseline, and leaving staff unsure what they are allowed to put into AI tools. A rollout tied to two or three business goals, with a named owner, a pilot, clear rules and simple metrics avoids most of these."}},
+      {"@type":"Question","name":"Is it safe to put company data into AI tools?","acceptedAnswer":{"@type":"Answer","text":"It can be, with the right plan and settings. Use business or enterprise plans that don't train on your data, decide which kinds of information are allowed in which tools, keep customer, employee and financial records out until you've checked where they go, and require a person to approve anything that reaches a customer or moves money. Write these rules down in a one-page AI use policy before the pilot starts."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/ai-implementation">AI for Companies</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/about">About</a>
+        <a href="/contact" class="btn btn-primary btn-sm">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <article>
+      <header class="hero article-hero">
+        <div class="container narrow">
+          <p class="eyebrow"><a href="/blog">Articles</a> &middot; AI for companies</p>
+          <h1>How should a company start implementing AI?</h1>
+          <p class="lead">Not by buying a tool. Start with the business problems, match each workflow to the right kind of AI, prove it with one team, and then spread what works. Here's the seven-step plan I use with small and mid-sized companies.</p>
+          <p class="article-meta">By <a href="/about">Denise Cullom</a> &middot; October 16, 2026 &middot; 11 min read</p>
+        </div>
+      </header>
+
+      <div class="container narrow prose article-body">
+
+        <div class="card">
+          <p class="eyebrow">The short answer</p>
+          <p>A company should implement AI in seven steps: <strong>(1) pick two or three business goals</strong>, <strong>(2) map the workflows behind them</strong> and how long they take, <strong>(3) match each workflow to the right level of AI</strong> (a person using AI as a helper, full automation, or an AI agent), <strong>(4) pilot with one willing team for 30 to 60 days</strong> against a measured baseline, <strong>(5) set simple guardrails</strong> on tools and data, <strong>(6) train people on their own work</strong> and name a champion in each team, and <strong>(7) measure, then expand</strong> one workflow at a time. Done this way, most small and mid-sized companies see their first measurable wins within about 90 days.</p>
+        </div>
+
+        <p>Most companies I talk to are in one of two places. Either nobody has touched AI because no one knows where to start, or everyone has been experimenting on their own, with five different tools, no rules, and nothing anyone could point to as a result. Both end up in the same spot: a lot of interest and very little to show for it.</p>
+        <p>I spent more than 25 years in operations, most of it as a COO, and rolling out AI turns out to be a lot like rolling out any change in how work gets done. The technology is the easy part. The hard part is choosing the right work, setting clear rules, and getting people to change habits. This plan is built around that.</p>
+
+        <h2>Why do most company AI rollouts stall?</h2>
+        <p>The same five problems show up again and again:</p>
+        <ul>
+          <li><strong>Tools before problems.</strong> Someone buys licenses because a competitor did, and then the team goes looking for something to use them on.</li>
+          <li><strong>No owner.</strong> AI is &ldquo;everyone's project,&rdquo; so it's no one's. Experiments never turn into a standard way of working.</li>
+          <li><strong>No training.</strong> People get a login and a lunch-and-learn. They try it twice, get a mediocre answer, and go back to the old way.</li>
+          <li><strong>No baseline.</strong> Nobody timed the work before, so nobody can prove it got better, and the budget gets cut at the next review.</li>
+          <li><strong>Fear about data.</strong> Staff don't know what they're allowed to paste in, so the careful ones avoid it and the careless ones paste in everything.</li>
+        </ul>
+        <p>Every step below is designed to prevent one of these.</p>
+
+        <h2>Step 1: What business goals should AI serve?</h2>
+        <p>Start with two or three outcomes the leadership team already cares about, stated in business terms. &ldquo;Respond to every customer inquiry within two hours.&rdquo; &ldquo;Close the month in five days instead of twelve.&rdquo; &ldquo;Give each salesperson back a day a week for selling.&rdquo; Not &ldquo;use AI more.&rdquo;</p>
+        <p>Goals like these do two jobs. They tell you which workflows to look at first, and they give you the yardstick you'll use to decide whether the rollout worked. If a proposed AI project doesn't move one of them, it waits.</p>
+
+        <h2>Step 2: How do you find where AI will help most?</h2>
+        <p>Map the workflows behind each goal: who does what, in which tool, how often and for how long. You're looking for work that is <strong>frequent</strong>, <strong>follows rules someone could write down</strong>, <strong>takes real time</strong>, and <strong>has a clear output</strong> you can check. Ask each team lead to list their team's recurring tasks with rough times. It takes an hour, and it's the most valuable hour in the whole project.</p>
+        <p>Then use AI to help you sort the list. This prompt works well with a team lead's notes:</p>
+
+        <div class="card prompt">
+          <div class="prompt-head"><b>1</b><h3>Find the AI opportunities in one team</h3><span class="pill">Prompt</span></div>
+          <p class="prompt-text">You are an operations consultant helping a company decide where AI can help first. Our company is [company], a [industry] business with [number] employees. Our goals for the next six months are: [2 or 3 business goals]. Here are the recurring tasks for our [team name] team, with roughly how often each happens and how long it takes: [paste the list]. Step 1: For each task, say which goal it affects, if any. Step 2: Score each task from 1 to 5 on frequency, how clear the rules are, time it takes, and how easy the output is to check. Step 3: Flag any task that involves customer data, employee data, money or legal commitments as higher risk. Step 4: Rank the top 5 opportunities and estimate the hours saved per month for each, after subtracting review time. Keep the estimates conservative and show your math. Ask me up to 3 questions first if anything important is missing.</p>
+          <button type="button" class="btn btn-ghost btn-sm copy">Copy prompt</button>
+        </div>
+
+        <h2>Step 3: What kind of AI does each workflow need?</h2>
+        <p>This is where most companies overspend or underbuild. Not every process needs the same kind of AI. I match every workflow to one of three levels:</p>
+        <ol>
+          <li><strong>Level 1: Human Intelligence Tasks (HIT).</strong> A person stays in the loop. AI drafts, researches, summarizes or suggests, and a person reviews and approves. The goal is to make the work faster, better and cheaper without changing who's responsible. Best for client communication, proposals, content, hiring and anything that depends on judgment or relationships.</li>
+          <li><strong>Level 2: Full automation (RPA).</strong> Software moves data between systems along fixed rules, end to end, with no one touching it. A form comes in, a record is created, an invoice goes out. Best for high-volume, predictable steps like data entry, scheduling, invoicing and routine reporting.</li>
+          <li><strong>Level 3: AI-intelligent workflows (AIIW).</strong> AI agents read context, make decisions within limits you set, and hand exceptions to a person. Best for work that varies too much for fixed rules but follows a pattern, like triaging requests, qualifying leads or answering common support questions.</li>
+        </ol>
+        <p>A simple way to choose: if the work needs judgment or touches a relationship, start at Level 1. If it's predictable and high-volume, Level 2. If it varies but you can describe what a good decision looks like, Level 3. Most companies end up with a mix, and many workflows start at Level 1 and move up once the team trusts the results.</p>
+
+        <div class="card prompt">
+          <div class="prompt-head"><b>2</b><h3>Match each workflow to the right level</h3><span class="pill">Prompt</span></div>
+          <p class="prompt-text">You are helping a company decide how to apply AI to each of its workflows. There are three options. Level 1: a person does the work with AI as a helper, and a person approves the output. Level 2: full automation that moves data between systems along fixed rules with no person involved. Level 3: an AI agent that reads context, decides within set limits and hands exceptions to a person. Here are our top workflows, with the tools each one uses today: [paste the list]. For each workflow, recommend a level and explain why in one or two sentences, considering risk, volume, how much the work varies and whether it reaches customers or money. Then list what each one needs before it can start: the tools, the systems that must be connected, the documents or rules to write down, and who should approve the output. Finish with the order you'd build them in for the fastest measurable result.</p>
+          <button type="button" class="btn btn-ghost btn-sm copy">Copy prompt</button>
+        </div>
+
+        <h2>Step 4: How should you run an AI pilot?</h2>
+        <p>Pick <strong>one team</strong> with a willing lead and <strong>two or three workflows</strong> from your ranked list. Before anything changes, measure the baseline: how long each task takes, how often, and how many errors or rework loops it has today. Then run the pilot for 30 to 60 days.</p>
+        <p>Building the pilot is the practical work of creating your AI pipeline: placing the right tools with the right people and training them, designing each workflow step by step, writing the prompts and agent instructions around your business and your voice, connecting the systems involved (CRM, email, calendar, documents) so nobody is copying and pasting, and testing before anyone relies on it. Keep the first version simple. A well-written prompt that the whole team uses beats a custom app nobody opens.</p>
+        <p>At the end, compare against the baseline and decide for each workflow: keep, fix or drop. Dropping one is a good result. It's cheaper to learn that in a pilot than across the whole company.</p>
+
+        <h2>Step 5: What AI rules does a company need?</h2>
+        <p>Before the pilot starts, write a one-page AI use policy. It doesn't need a lawyer for the first version, but it does need to answer five questions clearly:</p>
+        <ul>
+          <li><strong>Which tools are approved?</strong> Use business or enterprise plans that don't train on your data, and say which ones.</li>
+          <li><strong>What data can go in?</strong> For example: public and general business information, yes. Customer, employee, health or financial records, only in approved tools with the right settings, or not at all.</li>
+          <li><strong>What needs a human's approval?</strong> Anything that reaches a customer, moves money, changes records or affects an employee.</li>
+          <li><strong>Who owns it?</strong> One person who approves new tools and answers questions.</li>
+          <li><strong>What happens when something goes wrong?</strong> Who to tell, and how to roll back.</li>
+        </ul>
+
+        <div class="card prompt">
+          <div class="prompt-head"><b>3</b><h3>Draft your one-page AI use policy</h3><span class="pill">Prompt</span></div>
+          <p class="prompt-text">You are an operations advisor helping a [industry] company with [number] employees write its first AI use policy. Write it in plain language, on one page, for employees rather than lawyers. Our approved AI tools are: [list]. Our sensitive data includes: [e.g. customer records, payroll, contracts, health information]. Any regulations we follow: [list, or none]. The policy owner is [name and role]. Include: the approved tools, a simple traffic-light list of what data is allowed (green, use freely; yellow, approved tools only; red, never), which kinds of output always need a person's approval before use, how to request a new tool, and what to do if someone makes a mistake. End with three short do's and three don'ts. Mark anything I should check with a lawyer or our IT provider as [CHECK].</p>
+          <button type="button" class="btn btn-ghost btn-sm copy">Copy prompt</button>
+        </div>
+
+        <h2>Step 6: How do you get employees to actually use AI?</h2>
+        <p>Adoption is where rollouts are won or lost. Four things make the difference:</p>
+        <ul>
+          <li><strong>Train on their own work.</strong> Generic training produces generic results. Show each team how AI handles the three tasks they do every week, using their real documents.</li>
+          <li><strong>Name a champion in each team.</strong> Someone who's a little ahead, shares what works, and is the first person colleagues ask. It costs a few hours a month and matters more than any tool.</li>
+          <li><strong>Make it the default.</strong> Put the prompt in the template, the agent in the shared project, the automation in the workflow. If using AI takes extra steps, people won't.</li>
+          <li><strong>Be honest about jobs.</strong> People hold back when they think they're automating themselves out of a role. Say plainly what the time saved will be used for, like more selling, faster service or fewer late nights, and mean it.</li>
+        </ul>
+        <p>Then build a short feedback loop: a monthly 30-minute check-in where each champion shares what worked, what broke and what to try next.</p>
+
+        <h2>Step 7: How do you measure AI ROI and decide what's next?</h2>
+        <p>Keep the scorecard simple and tied to the goals from Step 1:</p>
+        <blockquote class="example">
+          <p><strong>Hours saved per month</strong> = (minutes per task before &minus; minutes per task now, including review) &times; times per month &divide; 60</p>
+          <p><strong>Value of time saved</strong> = hours saved &times; the loaded hourly cost of the people doing the work</p>
+          <p><strong>Net monthly return</strong> = value of time saved &minus; monthly tool and maintenance costs</p>
+        </blockquote>
+        <p>Track two more numbers next to it: <strong>adoption</strong> (how many people in the team use it weekly) and <strong>quality</strong> (errors, rework or response times compared with the baseline). Time saved with falling quality isn't a win, and great results that only one person uses aren't a rollout.</p>
+        <p>When a pilot workflow pays off, write it down as the standard way of working, then move to the next team or the next workflow on your list. Plan for regular maintenance too. AI tools change every few months, and a workflow nobody checks will quietly drift.</p>
+
+        <h2>Should you build AI tools yourself, buy them, or hire someone?</h2>
+        <p>Usually some of each. <strong>Level 1 work and simple agents</strong> can be built in-house with business plans for tools like Claude or ChatGPT, with no code. <strong>Level 2 automation</strong> often means an automation platform, set up by someone on your team or a specialist. <strong>Custom integrations, internal apps and larger agent systems</strong> are where outside developers or automation partners earn their fee. The mistake is hiring builders before you know what to build. Do Steps 1 to 3 first, and every quote you get will be cheaper and more accurate.</p>
+
+        <h2>What does a 90-day AI rollout look like?</h2>
+        <ol>
+          <li><strong>Weeks 1 to 3: Strategy.</strong> Agree on goals, map workflows with team leads, rank opportunities, match each to a level, and write the AI use policy.</li>
+          <li><strong>Weeks 4 to 10: Pilot.</strong> Measure the baseline, set up tools, build two or three workflows with one team, train them, and check in weekly.</li>
+          <li><strong>Weeks 11 to 13: Decide and expand.</strong> Compare results with the baseline, keep, fix or drop each workflow, document the winners, and choose the next team.</li>
+        </ol>
+
+        <div class="card article-cta">
+          <p class="eyebrow">AI implementation for companies</p>
+          <h3>Want help planning your rollout?</h3>
+          <p>I help small and mid-sized companies build their AI strategy, plan the implementation, train their teams, design the right solutions, connect them with vetted builders when a project needs one, and see adoption through. The first step is a free 20-minute discovery call about your goals and where AI will pay off first.</p>
+          <div class="cta-row" style="margin-top:18px">
+            <a href="/contact?topic=ai-implementation" class="btn btn-primary" data-book>Book a free discovery call</a>
+            <a href="/ai-implementation" class="btn btn-ghost">How I help companies</a>
+          </div>
+        </div>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq">
+          <details>
+            <summary>How long does it take to implement AI in a small or mid-sized company?</summary>
+            <p>A focused first rollout takes about 90 days: two to three weeks to pick goals and map workflows, 30 to 60 days to pilot with one team, and the rest to train people and decide what to expand. Company-wide adoption usually happens in waves over 6 to 12 months, one department or workflow at a time.</p>
+          </details>
+          <details>
+            <summary>How much does it cost to implement AI in a company?</summary>
+            <p>The tools are usually the smallest cost. Business plans for AI assistants like Claude or ChatGPT cost roughly $25 to $30 per person per month at the time of writing, and automation platforms add a monthly fee based on volume. The bigger costs are the time to design workflows, train people and connect systems, plus any outside builders for custom integrations. Start with a pilot so you know the savings before you spend on a wider rollout.</p>
+          </details>
+          <details>
+            <summary>Do we need an in-house AI team to get started?</summary>
+            <p>No. Most small and mid-sized companies start with one executive sponsor, one owner for the rollout and a champion in each pilot team. Off-the-shelf AI assistants cover most early work. Developers or automation specialists are only needed when you connect systems or build custom tools, and they can be brought in per project.</p>
+          </details>
+          <details>
+            <summary>Which department should use AI first?</summary>
+            <p>Start where the work is high-volume, repetitive and easy to measure, and where the team lead is willing. Operations, customer service, sales follow-up and finance reporting are common first choices. Avoid starting with the most sensitive work, like HR decisions or anything involving regulated data, until your guardrails are in place.</p>
+          </details>
+          <details>
+            <summary>What are the three levels of AI workflows?</summary>
+            <p>Level 1 is human-in-the-loop work, where AI drafts, researches or suggests and a person reviews and approves. Level 2 is full automation, where software moves data between systems along fixed rules with no one touching it. Level 3 is AI-intelligent workflows, where AI agents read context, make decisions within limits you set and hand exceptions to a person. Most companies need a mix, matched to each workflow's risk, volume and how much it varies.</p>
+          </details>
+          <details>
+            <summary>Why do most company AI projects fail?</summary>
+            <p>The usual causes are buying tools before defining the problem, running scattered experiments with no owner, skipping training, never measuring a baseline, and leaving staff unsure what they are allowed to put into AI tools. A rollout tied to two or three business goals, with a named owner, a pilot, clear rules and simple metrics avoids most of these.</p>
+          </details>
+          <details>
+            <summary>Is it safe to put company data into AI tools?</summary>
+            <p>It can be, with the right plan and settings. Use business or enterprise plans that don't train on your data, decide which kinds of information are allowed in which tools, keep customer, employee and financial records out until you've checked where they go, and require a person to approve anything that reaches a customer or moves money. Write these rules down in a one-page AI use policy before the pilot starts.</p>
+          </details>
+        </div>
+
+        <p class="article-aside" style="margin-top:32px">Not ready for a company-wide rollout yet? Start with the free <a href="/ai-workforce">AI Workforce Blueprint</a> to see how AI assistants can be set up by department, or read <a href="/blog/ai-agents-for-small-business">which tasks to hand to AI agents first</a>. When you're ready to build, <a href="/agents">20 AI Agents That Pay for Themselves</a> has ready-to-paste instructions for each one.</p>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <div class="footer-links">
+        <a href="/blog">Articles</a>
+        <a href="/scorecard">Pipeline scorecard</a>
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/ai-workforce">AI workforce guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/ai-implementation">AI for companies</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+      <span>&copy; <span class="year"></span> VirtualExpert.net</span>
+    </div>
+  </footer>
+
+  <script src="/main.js?v=2"></script>
+</body>
+</html>
