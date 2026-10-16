@@ -53,7 +53,7 @@ a:hover { color: var(--accent-dark); }
 .logo span { color: var(--accent); }
 .logo:hover { color: var(--text); }
 .nav-links { display: flex; align-items: center; gap: 26px; font-size: 0.95rem; }
-.nav-links a { color: var(--muted); text-decoration: none; }
+.nav-links a { color: var(--muted); text-decoration: none; white-space: nowrap; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
 .nav-links .btn { color: #fff; }
 .nav-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font: inherit; cursor: pointer; color: var(--text); }
@@ -264,7 +264,8 @@ ul.check li::before { content: ""; position: absolute; left: 0; top: 0.5em; widt
   .headshot { max-width: 260px; }
   .band { padding: 36px 28px; }
 }
-@media (max-width: 760px) {
+/* Collapse the menu before its links start wrapping */
+@media (max-width: 1100px) {
   .nav-toggle { display: block; }
   .nav-links {
     display: none; position: absolute; top: 68px; left: 0; right: 0;
@@ -272,6 +273,8 @@ ul.check li::before { content: ""; position: absolute; left: 0; top: 0.5em; widt
     background: var(--bg); border-bottom: 1px solid var(--border); padding: 20px;
   }
   .nav-links.open { display: flex; }
+}
+@media (max-width: 760px) {
   .section { padding: 68px 0; }
   .hero { padding: 56px 0; }
   .grid-2, .form-row { grid-template-columns: 1fr; }
