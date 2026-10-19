@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Do You Actually Put AI to Work in a Small Company? 5 Setups You Can Copy | VirtualExpert.net</title>
+  <meta name="description" content="Five hands-on AI setups for a small company: a meeting agent that turns transcripts into action steps, tagging @Claude in Slack to file tickets in Asana, Linear, Jira or Shortcut, Slack messages sent for you, a daily project digest and a weekly promises sweep. What each needs and the exact instructions to paste.">
+  <link rel="canonical" href="https://virtualexpert.net/blog/ai-setups-for-small-business">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="VirtualExpert.net">
+  <meta property="og:title" content="How Do You Actually Put AI to Work in a Small Company? 5 Setups You Can Copy">
+  <meta property="og:description" content="A meeting agent that writes the follow-up, @Claude in Slack filing your tickets, messages sent on your behalf, and more: what each setup needs and the instructions to paste.">
+  <meta property="og:url" content="https://virtualexpert.net/blog/ai-setups-for-small-business">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=4">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "How Do You Actually Put AI to Work in a Small Company? 5 Setups You Can Copy", "description": "Five hands-on AI setups for a small company: a meeting follow-up agent, tagging @Claude in Slack to file tickets, Slack messages sent on your behalf, a daily project digest and a weekly promises sweep.", "datePublished": "2026-10-19", "dateModified": "2026-10-19", "author": {"@type": "Person", "name": "Denise Cullom", "url": "https://virtualexpert.net/about"}, "publisher": {"@type": "Organization", "name": "VirtualExpert.net", "url": "https://virtualexpert.net"}, "mainEntityOfPage": "https://virtualexpert.net/blog/ai-setups-for-small-business", "about": ["AI for small business", "AI automation", "Claude", "Slack", "Meeting notes", "Project management"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Articles", "item": "https://virtualexpert.net/blog"}, {"@type": "ListItem", "position": 2, "name": "How do you actually put AI to work in a small company?", "item": "https://virtualexpert.net/blog/ai-setups-for-small-business"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can you tag Claude in Slack to create a ticket?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with Claude Tag, the version of Claude that lives in Slack. Mention @Claude in a thread and ask it to file the thread as a ticket, and it creates the ticket in your tracker and posts the link back. It needs a Claude Team or Enterprise plan, and an admin has to connect your tracker, such as Asana, Linear or Jira, once. It is in public beta as of October 2026."}}, {"@type": "Question", "name": "Does Claude work with Shortcut and Basecamp?", "acceptedAnswer": {"@type": "Answer", "text": "Shortcut runs an official hosted MCP server at https://mcp.shortcut.com/mcp that you add to Claude as a custom connector; it can create and update stories, add comments and create epics. Basecamp's official MCP server ships inside the Basecamp command-line tool and runs on your own computer with Claude Code or the desktop app. Neither is a one-click connector in Claude's directory yet."}}, {"@type": "Question", "name": "Can AI send Slack messages on my behalf?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. When you connect Slack to your own Claude account, Claude can draft a message and send it to a person or channel under your name, within the permissions you grant. Keep sending on ask-first so you approve each message. Claude Tag in a shared channel works differently: it posts as Claude, not as you, and its scheduled routines don't direct-message people."}}, {"@type": "Question", "name": "Do Claude scheduled tasks run when my computer is off?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as long as the task only uses connectors such as email, calendar or a meeting recorder. Scheduled tasks run on Anthropic's servers on the schedule you pick (hourly, daily, weekdays or weekly). A task that needs files or apps on your own computer only runs when that computer is on. Scheduled tasks are included on all paid Claude plans."}}, {"@type": "Question", "name": "Which Claude plan does a small company need for these setups?", "acceptedAnswer": {"@type": "Answer", "text": "One person can run the meeting follow-up agent and the weekly promises sweep on a Pro or Max plan. To tag @Claude in shared Slack channels, you need a Team or Enterprise plan; Slack users don't each need a Claude seat, and channel work is billed by usage against a monthly spend limit the owner sets."}}, {"@type": "Question", "name": "Is it safe to connect AI to company tools like Slack and your project tracker?", "acceptedAnswer": {"@type": "Answer", "text": "It is when you set it up like a new hire: give AI its own dedicated account in each shared tool, grant read-only access wherever it only needs to look things up, keep anything that goes to a client as a draft for review, and write a short never list into every setup. Start with one setup, review its work for two weeks, then loosen the rules where it has earned it."}}]}]}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/ai-implementation">AI for Companies</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/blog" aria-current="page">Articles</a>
+        <a href="/about">About</a>
+        <a href="/contact" class="btn btn-primary btn-sm">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <article>
+      <header class="hero article-hero">
+        <div class="container narrow">
+          <p class="eyebrow"><a href="/blog">Articles</a> &middot; AI for companies</p>
+          <h1>How do you actually put AI to work in a small company?</h1>
+          <p class="lead">Skip the strategy deck. Here are five setups a small team can copy this week, from a meeting agent that writes everyone's action steps to tagging @Claude in Slack to file a ticket, with what each one needs and the exact instructions to paste.</p>
+          <p class="article-meta">By <a href="/about">Denise Cullom</a> &middot; October 19, 2026 &middot; 11 min read</p>
+        </div>
+      </header>
+
+      <div class="container narrow prose article-body">
+
+        <div class="card">
+          <p class="eyebrow">The short answer</p>
+          <p>Put AI where work already gets lost: <strong>after meetings</strong>, <strong>in Slack threads</strong> and <strong>in the follow-ups people forget</strong>. Five setups cover most small companies: <strong>a meeting agent</strong> that reads your transcripts and drafts the action steps, <strong>tagging @Claude in Slack</strong> to turn a thread into a ticket in Asana, Linear, Jira or Shortcut, <strong>Slack messages sent on your behalf</strong> after you approve them, <strong>a daily project digest</strong> that chases stalled work, and <strong>a weekly sweep</strong> of everything you promised. Each needs three things: a connection to the tool, written instructions with a &ldquo;never&rdquo; list, and a schedule or a trigger. Start with one, review its work for two weeks, then add the next.</p>
+        </div>
+
+        <p>Most small companies I talk to have already &ldquo;tried AI.&rdquo; Someone has a ChatGPT login, someone else uses it to rewrite emails, and nothing about how the team actually works has changed. The gap isn't the technology. It's that nobody wired AI into the places where the work happens: the meeting that ends with five action items nobody writes down, the Slack thread where a bug gets reported and never makes it to the tracker, the &ldquo;I'll send that over&rdquo; that slips by Friday.</p>
+        <p>In 25 years of running operations, most of it as a COO, I learned that small teams rarely drop the ball on the hard work. They drop it in the handoffs. That's exactly where AI is now good enough to help. Below are the five setups I'd start with, written for Claude because it connects to the tools small teams use most, though the same ideas work in other assistants.</p>
+        <p>If you're still deciding <em>which</em> tasks to hand over, start with <a href="/blog/ai-agents-for-small-business">which tasks a small business should hand to AI agents first</a>. If you're planning a company-wide rollout, read <a href="/blog/how-to-implement-ai-in-your-company">how a company should start implementing AI</a>. This article is the hands-on part: what to switch on and what to type.</p>
+
+        <h2>What does every AI setup need before it works?</h2>
+        <p>Every setup below is built from the same three pieces. Once you see them, you can design your own.</p>
+        <ol>
+          <li><strong>A connection.</strong> Claude can only act in tools it's connected to. These are called <strong>connectors</strong>: you add them under <strong>Customize &gt; Connectors</strong> in Claude and sign in to each tool once. There are ready-made ones for Gmail, Google Calendar, Google Drive, Slack, Asana, Linear, Jira, Notion, Fathom, Granola and many more. For tools without one, you can add a <strong>custom connector</strong> by pasting the tool's MCP server address (MCP is the standard way AI assistants plug into apps).</li>
+          <li><strong>Instructions.</strong> A short, specific brief, the same one you'd give a new assistant: what to look at, what to produce, what format, and a <strong>never list</strong> (never send to a client, never delete, never discuss money). The never list is what turns a clever demo into something you trust.</li>
+          <li><strong>A trigger.</strong> Either a schedule (&ldquo;every weekday at 5pm&rdquo;) or a mention (&ldquo;@Claude, file this&rdquo;). In the Claude app, <strong>scheduled tasks</strong> run hourly, daily, on weekdays or weekly, and they run on Anthropic's servers, so they keep going when your laptop is closed. They're included on every paid plan.</li>
+        </ol>
+
+        <h2>Setup 1: How do you turn meeting transcripts into action steps automatically?</h2>
+        <p>This is the one I'd build first in almost any company. Meetings end, everyone agrees on next steps, and by Thursday half of them are forgotten. A meeting agent fixes that without anyone having to take notes.</p>
+        <p><strong>What you need:</strong></p>
+        <ul>
+          <li><strong>A meeting recorder</strong> that already makes transcripts. Fathom and Granola both have Claude connectors, and several others do too. The Fathom connector is read-only, which is exactly what you want: Claude can read transcripts, summaries and action items but can't change anything.</li>
+          <li><strong>Your email connector</strong> (Gmail, for example) so Claude can write recap emails as <strong>drafts</strong> in your account.</li>
+          <li><strong>Your task tracker's connector</strong> (Asana, Linear, Jira, or Shortcut as a custom connector) if you want the action items filed as tasks too.</li>
+          <li><strong>A scheduled task</strong> that runs every weekday at the end of the day.</li>
+        </ul>
+        <p><strong>How to set it up:</strong> In Claude, open a new conversation and say &ldquo;create a scheduled task that runs every weekday at 5pm,&rdquo; then paste the instructions below. (In Cowork you can also go to <strong>Scheduled &gt; New task</strong>.) Run it once by hand on a day with real meetings before you let the schedule take over.</p>
+
+        <div class="card prompt">
+          <div class="prompt-head"><b>1</b><h3>Meeting follow-up agent</h3><span class="pill">Instructions</span></div>
+          <p class="prompt-text">You are the meeting follow-up assistant for [your name], [your role] at [company]. Each time you run, find every meeting I attended today in [Fathom / Granola]. For each meeting: Step 1: Read the transcript and list every action item, with who owns it and the due date. If no one was named, write OWNER? and if no date was said, write DATE? rather than guessing. Step 2: Write a short recap email to the attendees in my voice (plain words, under 150 words, sign off &ldquo;[your sign-off]&rdquo;): one line on what we decided, then the action items as a list. Save it as a Gmail draft. Do not send it. Step 3: For action items that belong to our team, create a task in [Asana project / Linear team / Shortcut workflow] with the owner, due date and a link to the recording. Skip any item that already exists. Step 4: Give me one summary: meetings processed, drafts waiting for me, tasks created, and every OWNER? or DATE? I need to fill in. Never: send an email, include anything said about pricing, salaries or people issues in a recap, or create tasks for people outside [company]. Skip internal one-on-ones entirely.</p>
+          <button type="button" class="btn btn-ghost btn-sm copy">Copy prompt</button>
+        </div>
+
+        <p>Your end-of-day job shrinks to five minutes: open your drafts, fix any OWNER? lines, and press send. The recaps go out the same day, which clients notice, and nothing agreed in a meeting depends on someone's memory again.</p>
+
+        <h2>Setup 2: How do you create tickets by tagging @Claude in Slack?</h2>
+        <p>Here's the setup people get most excited about. Someone reports a problem in Slack, the team talks it through, and instead of somebody copying it into the tracker later (or never), you type:</p>
+        <blockquote class="example">
+          <p>&ldquo;@Claude file this thread as a ticket in Shortcut, assign it to the owner we discussed above, and post the link here.&rdquo;</p>
+        </blockquote>
+        <p>Claude reads the thread, writes the ticket with a clear title, the details and the agreed owner, creates it in your tracker and posts the link back in the thread. The same trick turns a thread into a decision doc, a customer reply or a planning outline.</p>
+        <p><strong>What you need:</strong></p>
+        <ul>
+          <li><strong>Claude Tag</strong>, the version of Claude that lives in your Slack workspace as one shared teammate. It needs a Claude <strong>Team or Enterprise</strong> plan and is in public beta as of October 2026. Your Slack users don't each need a Claude seat. Channel work is billed by usage against a monthly spend limit the owner sets.</li>
+          <li><strong>A one-time setup by an owner:</strong> go to the Claude Tag page in your organization settings, send <strong>@Claude connect</strong> in Slack to get a pairing code, enter it, set the spend limit, and add Claude to the channels you want.</li>
+          <li><strong>A connection to your tracker.</strong> Asana, Linear and Jira are in the standard list. For <strong>Shortcut</strong>, first add Shortcut's official hosted MCP server, <code style="overflow-wrap:anywhere">https://mcp.shortcut.com/mcp</code>, as a custom connector in Claude; it can create and update stories, add comments and create epics, and Claude Tag can then use it. <strong>Basecamp</strong> is the one that takes more work today: its official MCP server comes inside the Basecamp command-line tool and runs on your own computer with Claude Code or the Claude desktop app, so it's great for one person but not yet a one-click option for a shared Slack channel.</li>
+        </ul>
+        <p>One important detail: it's an <strong>@mention</strong>, not a spoken wake word. Typing &ldquo;Claude&rdquo; in a message doesn't call it; tagging @Claude does. To make it automatic for a whole channel, save the rule to the channel's memory once:</p>
+
+        <div class="card prompt">
+          <div class="prompt-head"><b>2</b><h3>Turn a Slack channel into a ticket desk</h3><span class="pill">Slack message</span></div>
+          <p class="prompt-text">@Claude remember for this channel: when someone tags you on a bug, request or task, first check [Shortcut / Asana / Linear / Jira] for a ticket that already covers it and link that one if it exists. Otherwise create a new ticket in [project or team name] with a one-line title, what happened, steps to reproduce if it's a bug, who asked, and a link to this Slack thread. Assign it to the person named in the thread; if no one was named, leave it unassigned and say so. Post the ticket link in the thread. Never close, delete or reprioritize existing tickets, and never assign work to someone outside this channel.</p>
+          <button type="button" class="btn btn-ghost btn-sm copy">Copy prompt</button>
+        </div>
+
+        <p>Use a <strong>dedicated account</strong> for Claude in your tracker (a seat named &ldquo;Claude&rdquo;) rather than your own login. Anyone in the channel can ask Claude to act, so it should have its own, narrower access, and every ticket it creates is easy to spot in the history.</p>
+
+        <h2>Setup 3: Can AI send Slack messages on your behalf?</h2>
+        <p>Yes, and this one saves more time than it sounds like. Think of all the small nudges you send in a week: &ldquo;Can you send me the Q3 numbers by Thursday?&rdquo; &ldquo;Reminder, the client call moved to 2pm.&rdquo; &ldquo;Great work on the launch.&rdquo; You can hand those to Claude in one sentence each.</p>
+        <p><strong>What you need:</strong> the <strong>Slack connector</strong> on your own Claude account (available on Team and Enterprise plans). Once connected, Claude can search your workspace for context and send a message to a person or a channel as you, within the permissions you grant. If you use Claude Tag, a one-to-one DM with @Claude runs on your own account and your own connectors too.</p>
+        <p>Two rules keep this safe. First, <strong>keep sending on &ldquo;ask first,&rdquo;</strong> so Claude shows you every message before it goes. It takes one click and you'll catch the one time it misread the situation. Second, know the difference between the two Claudes: a message from your own connector goes out <strong>under your name</strong>, while Claude Tag in a shared channel posts <strong>as Claude</strong>, and its scheduled routines never DM people directly. They nudge in the channel thread instead, which is usually what you want for team reminders anyway.</p>
+
+        <div class="card prompt">
+          <div class="prompt-head"><b>3</b><h3>Send this week's nudges for me</h3><span class="pill">Prompt</span></div>
+          <p class="prompt-text">Using Slack, help me send these messages. For each one, look up the right person or channel, check the recent conversation with them so the message fits, and write it in my voice: friendly, direct, under 50 words, no exclamation marks. Show me each draft and wait for my OK before sending. 1. Ask [name] for [deliverable] by [day], and mention why it matters: [reason]. 2. Tell #[channel] that [meeting or deadline] moved to [new time]. 3. Thank [name] for [specific thing they did], and name one detail from it. Never send anything about pay, performance or someone's personal situation; flag those for me to write myself.</p>
+          <button type="button" class="btn btn-ghost btn-sm copy">Copy prompt</button>
+        </div>
+
+        <h2>Setup 4: How do you get a daily project update without asking for one?</h2>
+        <p>Every small team has someone who spends Friday afternoon asking &ldquo;where are we on this?&rdquo; in five different places. With Claude Tag, one message in the project channel sets up a <strong>routine</strong>, a standing job that posts on a schedule:</p>
+
+        <div class="card prompt">
+          <div class="prompt-head"><b>4</b><h3>Daily digest that chases stalled work</h3><span class="pill">Slack message</span></div>
+          <p class="prompt-text">@Claude every weekday at 4pm Eastern, post a project digest in this channel with three sections: what moved today, what's blocked and on whom, and what hasn't been touched in three working days. Check the tickets in [tracker project] as well as this channel. If an approval we're waiting on has gone two weekdays with no reply, nudge the person here in the thread. Done means approved, not just commented on. Skip days with nothing new, and keep each item to one line.</p>
+          <button type="button" class="btn btn-ghost btn-sm copy">Copy prompt</button>
+        </div>
+
+        <p>Three details make this work. <strong>Name the timezone</strong>, since routines run on a fixed clock (and recheck the time after daylight saving changes). <strong>Name the format</strong> so every digest looks the same and stays scannable. And <strong>use numbers</strong> like &ldquo;three working days&rdquo; instead of &ldquo;stale,&rdquo; so stalled work surfaces itself. Anyone in the channel can ask &ldquo;what routines do you have set up here?&rdquo; to see, change or stop them.</p>
+
+        <h2>Setup 5: How do you stop forgetting what you promised people?</h2>
+        <p>The last setup is for owners and managers personally. Over a week you say &ldquo;I'll send that,&rdquo; &ldquo;let me check and get back to you&rdquo; and &ldquo;I'll intro you&rdquo; dozens of times, across email, Slack and meetings. A weekly sweep catches every one of them. Set it up as a scheduled task for Friday morning:</p>
+
+        <div class="card prompt">
+          <div class="prompt-head"><b>5</b><h3>Weekly promises sweep</h3><span class="pill">Instructions</span></div>
+          <p class="prompt-text">Every Friday at 8am, review my last seven days of sent email, my Slack messages and my meeting transcripts in [Fathom / Granola]. Find every commitment I made: anything like &ldquo;I'll send,&rdquo; &ldquo;I'll check,&rdquo; &ldquo;let me get back to you,&rdquo; &ldquo;I'll introduce you&rdquo; or a date I agreed to. For each one, check whether I've already done it (a later email, message or file). Give me a list of open promises only, most overdue first, one line each: who I promised, what, when I said it, and where. For anything that's a quick reply, write a draft I can send. Never send anything; drafts only.</p>
+          <button type="button" class="btn btn-ghost btn-sm copy">Copy prompt</button>
+        </div>
+
+        <p>The first time you run this, expect a longer list than you'd like. That's the point. Clients and staff remember the promises we forget, and closing those loops is one of the cheapest ways to look organized.</p>
+
+        <h2>How do you keep AI setups safe in a small company?</h2>
+        <p>Treat each setup like a new hire on probation. The rules I use with clients:</p>
+        <ul>
+          <li><strong>Give AI its own accounts in shared tools.</strong> A dedicated &ldquo;Claude&rdquo; seat in your tracker or Google Workspace keeps its work auditable and lets you switch it off without touching anyone else's access.</li>
+          <li><strong>Read-only wherever possible.</strong> If a setup only needs to look things up (meeting transcripts, docs, reports), connect it read-only.</li>
+          <li><strong>Drafts before sends.</strong> Anything that reaches a client or goes out under someone's name gets reviewed by a person until the setup has a clean record.</li>
+          <li><strong>A never list in every set of instructions.</strong> Money, HR topics, deletions and anything legal stay with people.</li>
+          <li><strong>Watch the bill.</strong> Set the spend limit on Claude Tag before you launch, then check which channels use the most after the first month.</li>
+          <li><strong>Write it down.</strong> A one-page AI use policy (what's allowed, what's not, what data never goes in) saves a lot of awkward conversations later. The <a href="/blog/how-to-implement-ai-in-your-company">rollout article</a> covers what to put in it.</li>
+        </ul>
+
+        <h2>Which setup should you start with?</h2>
+        <p>Pick the one that fixes your loudest problem, and give each setup two weeks before adding the next:</p>
+        <ul>
+          <li><strong>Weeks 1 and 2: the meeting agent.</strong> It works for one person on any paid plan, shows results on day one, and teaches everyone what good AI instructions look like.</li>
+          <li><strong>Weeks 3 and 4: @Claude in Slack</strong> for ticket filing in one channel, if you're on a Team plan. Pick the channel where requests get lost most.</li>
+          <li><strong>Month 2: the daily digest and the promises sweep.</strong> By now you know where AI is reliable and where it needs a human check.</li>
+        </ul>
+        <p>Time each task by hand before you build, then time your review after two weeks. That difference is your real savings, and it's the number that tells you what to automate next.</p>
+
+        <div class="card article-cta">
+          <p class="eyebrow">AI implementation for companies</p>
+          <h3>Want these set up for your team?</h3>
+          <p>I help small and mid-sized companies choose the right setups, connect the tools, write the instructions and never lists, and train the team so people actually use them. The first step is a free 20-minute discovery call about where your team loses the most time.</p>
+          <div class="cta-row" style="margin-top:18px">
+            <a href="/contact?topic=ai-implementation" class="btn btn-primary" data-book>Book a free discovery call</a>
+            <a href="/agents" class="btn btn-ghost">See 20 AI agents that pay for themselves</a>
+          </div>
+          <p style="margin-top:14px">Prefer to build it yourself? The free <a href="/ai-workforce">AI Workforce Blueprint</a> walks through projects, skills, connectors and scheduled routines step by step.</p>
+        </div>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq">
+          <details>
+            <summary>Can you tag Claude in Slack to create a ticket?</summary>
+            <p>Yes, with Claude Tag, the version of Claude that lives in Slack. Mention @Claude in a thread and ask it to file the thread as a ticket, and it creates the ticket in your tracker and posts the link back. It needs a Claude Team or Enterprise plan, and an admin has to connect your tracker, such as Asana, Linear or Jira, once. It is in public beta as of October 2026.</p>
+          </details>
+          <details>
+            <summary>Does Claude work with Shortcut and Basecamp?</summary>
+            <p>Shortcut runs an official hosted MCP server at https://mcp.shortcut.com/mcp that you add to Claude as a custom connector; it can create and update stories, add comments and create epics. Basecamp's official MCP server ships inside the Basecamp command-line tool and runs on your own computer with Claude Code or the desktop app. Neither is a one-click connector in Claude's directory yet.</p>
+          </details>
+          <details>
+            <summary>Can AI send Slack messages on my behalf?</summary>
+            <p>Yes. When you connect Slack to your own Claude account, Claude can draft a message and send it to a person or channel under your name, within the permissions you grant. Keep sending on ask-first so you approve each message. Claude Tag in a shared channel works differently: it posts as Claude, not as you, and its scheduled routines don't direct-message people.</p>
+          </details>
+          <details>
+            <summary>Do Claude scheduled tasks run when my computer is off?</summary>
+            <p>Yes, as long as the task only uses connectors such as email, calendar or a meeting recorder. Scheduled tasks run on Anthropic's servers on the schedule you pick (hourly, daily, weekdays or weekly). A task that needs files or apps on your own computer only runs when that computer is on. Scheduled tasks are included on all paid Claude plans.</p>
+          </details>
+          <details>
+            <summary>Which Claude plan does a small company need for these setups?</summary>
+            <p>One person can run the meeting follow-up agent and the weekly promises sweep on a Pro or Max plan. To tag @Claude in shared Slack channels, you need a Team or Enterprise plan; Slack users don't each need a Claude seat, and channel work is billed by usage against a monthly spend limit the owner sets.</p>
+          </details>
+          <details>
+            <summary>Is it safe to connect AI to company tools like Slack and your project tracker?</summary>
+            <p>It is when you set it up like a new hire: give AI its own dedicated account in each shared tool, grant read-only access wherever it only needs to look things up, keep anything that goes to a client as a draft for review, and write a short never list into every setup. Start with one setup, review its work for two weeks, then loosen the rules where it has earned it.</p>
+          </details>
+        </div>
+
+        <p class="article-aside" style="margin-top:32px">Still choosing what to automate? Read <a href="/blog/ai-agents-for-small-business">which tasks to hand to AI agents first</a> for the four-question test and the savings math, or <a href="/blog/how-to-implement-ai-in-your-company">how a company should start implementing AI</a> for the full 90-day rollout plan.</p>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <div class="footer-links">
+        <a href="/blog">Articles</a>
+        <a href="/scorecard">Pipeline scorecard</a>
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/ai-workforce">AI workforce guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/ai-implementation">AI for companies</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+      <span>&copy; <span class="year"></span> VirtualExpert.net</span>
+    </div>
+  </footer>
+
+  <script src="/main.js?v=2"></script>
+</body>
+</html>
