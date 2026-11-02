@@ -15,7 +15,7 @@ var SETTINGS = {
     kit_support: '',  // Customer Support Kit, $39
     kits_all: '',     // All four kits, $79
     lab: '',          // AI VA Lab membership, $29/month (Stripe subscription)
-    vacourse: ''  // The AI-Ready VA Course, $297. Empty = /va-course shows the waitlist instead
+    vacourse: 'https://buy.stripe.com/eVq9AT1Bc8EAei217h87K04'  // The AI-Ready VA Course, $297 (code FOUNDINGVA = $100 off)
   },
   // Affiliate links for the /tools page, by tool: claude, chatgpt, fathom, otter,
   // zapier, calcom, notion, asana, canva. Empty = the plain link to the tool's site.
