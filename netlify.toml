@@ -37,6 +37,12 @@
   [headers.values]
     X-Robots-Tag = "noindex"
 
+# Members page for the AI VA Lab
+[[headers]]
+  for = "/lab"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 [[headers]]
   for = "/files/*"
   [headers.values]
