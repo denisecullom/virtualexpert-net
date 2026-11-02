@@ -49,7 +49,10 @@ var PRODUCTS = {
   lab: { item_id: 'lab', item_name: 'AI VA Lab membership (monthly)', price: 29 },
   vacourse: { item_id: 'vacourse', item_name: 'The AI-Ready VA Course', price: 297 },
   // Retired: the Kit is now part of the guide. Kept so /thanks/kit still records old-link purchases.
-  templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49 }
+  templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49 },
+  // VA network: one-time fees paid through Stripe links Denise emails after a hire / an approval
+  placement: { item_id: 'placement', item_name: 'VA placement fee', price: 400 },
+  va_listing: { item_id: 'va_listing', item_name: 'VA network listing fee', price: 49 }
 };
 window.dataLayer = window.dataLayer || [];
 function gtag() { window.dataLayer.push(arguments); }
@@ -70,7 +73,8 @@ if (SETTINGS.analytics) {
 var THANKS = {
   playbook: 'guide', agents: 'agents', kit: 'templates', bundle: 'bundle',
   'kit-inbox': 'kit_inbox', 'kit-social': 'kit_social', 'kit-books': 'kit_books',
-  'kit-support': 'kit_support', kits: 'kits_all', lab: 'lab', 'va-course': 'vacourse'
+  'kit-support': 'kit_support', kits: 'kits_all', lab: 'lab', 'va-course': 'vacourse',
+  placement: 'placement', 'va-listing': 'va_listing'
 };
 var thanks = window.location.pathname.match(/^\/thanks\/([a-z-]+?)(?:\.html)?\/?$/);
 if (thanks && !THANKS[thanks[1]]) thanks = null;
