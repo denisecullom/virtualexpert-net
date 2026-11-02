@@ -9,12 +9,12 @@ var SETTINGS = {
     agents: 'https://buy.stripe.com/4gM00jcfQbQM4Hs17h87K03',  // 20 AI Agents That Pay for Themselves, $49
     bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02',  // All three, $59
     // Done-for-you client kits for VAs ($39 each, all four $79)
-    kit_inbox: '',    // Inbox & Calendar Kit, $39
-    kit_social: '',   // Social Content Kit, $39
-    kit_books: '',    // Bookkeeping Prep Kit, $39
-    kit_support: '',  // Customer Support Kit, $39
-    kits_all: '',     // All four kits, $79
-    lab: '',          // AI VA Lab membership, $29/month (Stripe subscription)
+    kit_inbox: 'https://buy.stripe.com/eVq00j93E2gcb5QbLV87K07',    // Inbox & Calendar Kit, $39
+    kit_social: 'https://buy.stripe.com/7sY4gz3Jk1c87TEdU387K08',   // Social Content Kit, $39
+    kit_books: 'https://buy.stripe.com/00wdR93Jk3kgei203d87K09',    // Bookkeeping Prep Kit, $39
+    kit_support: 'https://buy.stripe.com/4gM4gz3Jk2gca1M03d87K0a',  // Customer Support Kit, $39
+    kits_all: 'https://buy.stripe.com/7sY00jgw62gcgqa6rB87K0b',     // All four kits, $79
+    lab: 'https://buy.stripe.com/5kQaEX0x8f2Yb5QeY787K0c',          // AI VA Lab membership, $29/month (Stripe subscription)
     vacourse: 'https://buy.stripe.com/eVq9AT1Bc8EAei217h87K04'  // The AI-Ready VA Course, $297 (code FOUNDINGVA = $100 off)
   },
   // Affiliate links for the /tools page, by tool: claude, chatgpt, fathom, otter,
