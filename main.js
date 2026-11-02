@@ -23,7 +23,10 @@ var PRODUCTS = {
   agents: { item_id: 'agents', item_name: '20 AI Agents That Pay for Themselves', price: 49 },
   bundle: { item_id: 'bundle', item_name: 'The Complete AI Bundle', price: 59 },
   // Retired: the Kit is now part of the guide. Kept so /thanks/kit still records old-link purchases.
-  templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49 }
+  templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49 },
+  // VA network: one-time fees paid through Stripe links Denise emails after a hire / an approval
+  placement: { item_id: 'placement', item_name: 'VA placement fee', price: 400 },
+  va_listing: { item_id: 'va_listing', item_name: 'VA network listing fee', price: 49 }
 };
 window.dataLayer = window.dataLayer || [];
 function gtag() { window.dataLayer.push(arguments); }
@@ -39,12 +42,12 @@ if (SETTINGS.analytics) {
   gtag('config', SETTINGS.analytics);
 }
 
-// Purchases: Stripe sends buyers to /thanks/playbook|agents|bundle?session_id=...
+// Purchases: Stripe sends buyers to /thanks/playbook|agents|bundle|placement|va-listing?session_id=...
 // The session ID doubles as the transaction ID, so a reload isn't counted twice.
-var thanks = window.location.pathname.match(/^\/thanks\/(playbook|agents|kit|bundle)/);
+var thanks = window.location.pathname.match(/^\/thanks\/(playbook|agents|kit|bundle|placement|va-listing)/);
 var sessionId = new URLSearchParams(window.location.search).get('session_id');
 if (thanks && sessionId) {
-  var bought = PRODUCTS[{ playbook: 'guide', agents: 'agents', kit: 'templates', bundle: 'bundle' }[thanks[1]]];
+  var bought = PRODUCTS[{ playbook: 'guide', agents: 'agents', kit: 'templates', bundle: 'bundle', placement: 'placement', 'va-listing': 'va_listing' }[thanks[1]]];
   track('purchase', {
     transaction_id: sessionId,
     value: bought.price,
