@@ -7,7 +7,8 @@ var SETTINGS = {
   checkout: {
     guide: 'https://buy.stripe.com/4gMaEX2Fg084ei2dU387K00',   // The AI Client Playbook + Kit, $29
     agents: 'https://buy.stripe.com/4gM00jcfQbQM4Hs17h87K03',  // 20 AI Agents That Pay for Themselves, $49
-    bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02'   // All three, $59
+    bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02',  // All three, $59
+    vacourse: ''  // The AI-Ready VA Course, $297. Empty = /va-course shows the waitlist instead
   },
   // Booking link for discovery calls (Calendly, Cal.com, TidyCal, etc.)
   booking: 'https://cal.com/denise-cullom/discovery-call',
@@ -22,6 +23,7 @@ var PRODUCTS = {
   guide: { item_id: 'guide', item_name: 'The AI Client Playbook + Kit', price: 29 },
   agents: { item_id: 'agents', item_name: '20 AI Agents That Pay for Themselves', price: 49 },
   bundle: { item_id: 'bundle', item_name: 'The Complete AI Bundle', price: 59 },
+  vacourse: { item_id: 'vacourse', item_name: 'The AI-Ready VA Course', price: 297 },
   // Retired: the Kit is now part of the guide. Kept so /thanks/kit still records old-link purchases.
   templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49 }
 };
@@ -39,12 +41,12 @@ if (SETTINGS.analytics) {
   gtag('config', SETTINGS.analytics);
 }
 
-// Purchases: Stripe sends buyers to /thanks/playbook|agents|bundle?session_id=...
+// Purchases: Stripe sends buyers to /thanks/playbook|agents|bundle|va-course?session_id=...
 // The session ID doubles as the transaction ID, so a reload isn't counted twice.
-var thanks = window.location.pathname.match(/^\/thanks\/(playbook|agents|kit|bundle)/);
+var thanks = window.location.pathname.match(/^\/thanks\/(playbook|agents|kit|bundle|va-course)/);
 var sessionId = new URLSearchParams(window.location.search).get('session_id');
 if (thanks && sessionId) {
-  var bought = PRODUCTS[{ playbook: 'guide', agents: 'agents', kit: 'templates', bundle: 'bundle' }[thanks[1]]];
+  var bought = PRODUCTS[{ playbook: 'guide', agents: 'agents', kit: 'templates', bundle: 'bundle', 'va-course': 'vacourse' }[thanks[1]]];
   track('purchase', {
     transaction_id: sessionId,
     value: bought.price,
@@ -77,14 +79,19 @@ if (useLemon) {
   ls.defer = true;
   document.head.appendChild(ls);
 }
-if (hasCheckout) {
-  // Launch-list sections are only needed until checkout is live
-  document.querySelectorAll('[data-prelaunch]').forEach(function (el) { el.hidden = true; });
-  // Hide any buy button whose product has no link yet (its launch list is hidden too)
-  document.querySelectorAll('[data-buy]').forEach(function (btn) {
-    if (!SETTINGS.checkout[btn.getAttribute('data-buy')]) btn.hidden = true;
-  });
-}
+// Launch-list sections are only needed until checkout is live.
+// data-prelaunch="product" waits for that product's own link instead.
+document.querySelectorAll('[data-prelaunch]').forEach(function (el) {
+  var product = el.getAttribute('data-prelaunch');
+  if (product ? SETTINGS.checkout[product] : hasCheckout) el.hidden = true;
+});
+// Hide any buy button whose product has no link yet and whose launch list is hidden
+// (or, for a product with its own waitlist, until its link is added)
+document.querySelectorAll('[data-buy]').forEach(function (btn) {
+  var product = btn.getAttribute('data-buy');
+  if (SETTINGS.checkout[product]) return;
+  if (hasCheckout || document.querySelector('[data-prelaunch="' + product + '"]')) btn.hidden = true;
+});
 
 // Booking buttons: <a data-book>
 if (SETTINGS.booking) {
