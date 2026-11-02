@@ -48,11 +48,13 @@ a:hover { color: var(--accent-dark); }
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
+/* The menu has many links, so the header row is wider than the page content */
+.nav .container { max-width: 1320px; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 24px; }
 .logo { font-family: var(--serif); font-weight: 600; font-size: 1.3rem; letter-spacing: -0.01em; color: var(--text); text-decoration: none; }
 .logo span { color: var(--accent); }
 .logo:hover { color: var(--text); }
-.nav-links { display: flex; align-items: center; gap: 22px; font-size: 0.95rem; }
+.nav-links { display: flex; align-items: center; gap: 18px; font-size: 0.94rem; }
 .nav-links a { color: var(--muted); text-decoration: none; white-space: nowrap; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
 .nav-links .btn { color: #fff; }
@@ -265,7 +267,7 @@ ul.check li::before { content: ""; position: absolute; left: 0; top: 0.5em; widt
   .band { padding: 36px 28px; }
 }
 /* Collapse the menu before its links start wrapping */
-@media (max-width: 1280px) {
+@media (max-width: 1340px) {
   .nav-toggle { display: block; }
   .nav-links {
     display: none; position: absolute; top: 68px; left: 0; right: 0;

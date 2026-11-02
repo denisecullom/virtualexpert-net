@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=6">
+  <link rel="stylesheet" href="/styles.css?v=7">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "How Do You Actually Put AI to Work in a Small Company? 5 Setups You Can Copy", "description": "Five hands-on AI setups for a small company: a meeting follow-up agent, tagging @Claude in Slack to file tickets, Slack messages sent on your behalf, a daily project digest and a weekly promises sweep.", "datePublished": "2026-10-19", "dateModified": "2026-10-19", "author": {"@type": "Person", "name": "Denise Cullom", "url": "https://virtualexpert.net/about"}, "publisher": {"@type": "Organization", "name": "VirtualExpert.net", "url": "https://virtualexpert.net"}, "mainEntityOfPage": "https://virtualexpert.net/blog/ai-setups-for-small-business", "about": ["AI for small business", "AI automation", "Claude", "Slack", "Meeting notes", "Project management"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Articles", "item": "https://virtualexpert.net/blog"}, {"@type": "ListItem", "position": 2, "name": "How do you actually put AI to work in a small company?", "item": "https://virtualexpert.net/blog/ai-setups-for-small-business"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can you tag Claude in Slack to create a ticket?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with Claude Tag, the version of Claude that lives in Slack. Mention @Claude in a thread and ask it to file the thread as a ticket, and it creates the ticket in your tracker and posts the link back. It needs a Claude Team or Enterprise plan, and an admin has to connect your tracker, such as Asana, Linear or Jira, once. It is in public beta as of October 2026."}}, {"@type": "Question", "name": "Does Claude work with Shortcut and Basecamp?", "acceptedAnswer": {"@type": "Answer", "text": "Shortcut runs an official hosted MCP server at https://mcp.shortcut.com/mcp that you add to Claude as a custom connector; it can create and update stories, add comments and create epics. Basecamp's official MCP server ships inside the Basecamp command-line tool and runs on your own computer with Claude Code or the desktop app. Neither is a one-click connector in Claude's directory yet."}}, {"@type": "Question", "name": "Can AI send Slack messages on my behalf?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. When you connect Slack to your own Claude account, Claude can draft a message and send it to a person or channel under your name, within the permissions you grant. Keep sending on ask-first so you approve each message. Claude Tag in a shared channel works differently: it posts as Claude, not as you, and its scheduled routines don't direct-message people."}}, {"@type": "Question", "name": "Do Claude scheduled tasks run when my computer is off?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as long as the task only uses connectors such as email, calendar or a meeting recorder. Scheduled tasks run on Anthropic's servers on the schedule you pick (hourly, daily, weekdays or weekly). A task that needs files or apps on your own computer only runs when that computer is on. Scheduled tasks are included on all paid Claude plans."}}, {"@type": "Question", "name": "Which Claude plan does a small company need for these setups?", "acceptedAnswer": {"@type": "Answer", "text": "One person can run the meeting follow-up agent and the weekly promises sweep on a Pro or Max plan. To tag @Claude in shared Slack channels, you need a Team or Enterprise plan; Slack users don't each need a Claude seat, and channel work is billed by usage against a monthly spend limit the owner sets."}}, {"@type": "Question", "name": "Is it safe to connect AI to company tools like Slack and your project tracker?", "acceptedAnswer": {"@type": "Answer", "text": "It is when you set it up like a new hire: give AI its own dedicated account in each shared tool, grant read-only access wherever it only needs to look things up, keep anything that goes to a client as a draft for review, and write a short never list into every setup. Start with one setup, review its work for two weeks, then loosen the rules where it has earned it."}}]}]}
   </script>
@@ -35,6 +35,7 @@
         <a href="/va-course">VA Course</a>
         <a href="/kits">VA Kits</a>
         <a href="/ai-implementation">AI for Companies</a>
+        <a href="/hire-a-va">Hire a VA</a>
         <a href="/consulting">Consulting</a>
         <a href="/blog" aria-current="page">Articles</a>
         <a href="/contact" class="btn btn-primary btn-sm">Work with me</a>
@@ -229,6 +230,8 @@
         <a href="/membership">AI VA Lab</a>
         <a href="/tools">AI tools</a>
         <a href="/ai-implementation">AI for companies</a>
+        <a href="/hire-a-va">Hire an AI-trained VA</a>
+        <a href="/become-a-va">Join the VA network</a>
         <a href="/consulting">Consulting</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
@@ -238,6 +241,6 @@
     </div>
   </footer>
 
-  <script src="/main.js?v=5"></script>
+  <script src="/main.js?v=7"></script>
 </body>
 </html>
