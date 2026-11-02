@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-Ready VA certification | VirtualExpert.net</title>
+  <meta name="description" content="Take the AI-Ready VA assessment and submit your final project.">
+  <link rel="canonical" href="https://virtualexpert.net/va-certify">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VirtualExpert.net">
+  <meta property="og:title" content="AI-Ready VA certification | VirtualExpert.net">
+  <meta property="og:description" content="Take the AI-Ready VA assessment and submit your final project.">
+  <meta property="og:url" content="https://virtualexpert.net/va-certify">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=6">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="/ai-va-guide">Free VA guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/ai-implementation">AI for Companies</a>
+        <a href="/hire-a-va">Hire a VA</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/blog">Articles</a>
+        <a href="/about">About</a>
+        <a href="/contact" class="btn btn-primary btn-sm">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="section" id="cq-intro">
+      <div class="container narrow">
+        <p class="eyebrow">For AI-Ready VA students</p>
+        <h1>Get your AI-Ready VA certification</h1>
+        <p class="lead">Two steps: pass the 15-question assessment (12 correct to pass, retake as often as you like), then submit your final project from Module 8.</p>
+        <div class="card">
+          <h3>Have these ready before you start</h3>
+          <ul class="check" style="margin-top:14px">
+            <li>Your audit: at least 10 tasks scored, with your top three and why</li>
+            <li>Your Workflow Card</li>
+            <li>Your five-example test results and what you changed</li>
+            <li>Your savings math, with review time included</li>
+            <li>A 150 to 300 word case study and a note on how you protected client data</li>
+          </ul>
+          <p style="margin-top:14px;color:var(--muted)">Put them in one shared Google Doc or folder (set to "anyone with the link can view"), or paste them into the form. Remove client names and anything confidential first.</p>
+          <button type="button" class="btn btn-primary" id="cq-start" style="margin-top:8px">Start the assessment</button>
+          <noscript><p class="form-msg form-error">The assessment needs JavaScript. Please turn it on, or <a href="/contact?topic=other">contact me</a>.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cq-quiz" hidden>
+      <div class="container narrow">
+        <div class="sc-progress" aria-hidden="true"><span id="cq-bar"></span></div>
+        <p class="eyebrow" id="cq-count"></p>
+        <fieldset class="sc-question">
+          <legend><h2 id="cq-q" tabindex="-1"></h2></legend>
+          <div class="sc-options" id="cq-options"></div>
+        </fieldset>
+        <div class="sc-nav"><button type="button" class="btn btn-ghost" id="cq-back">Back</button></div>
+      </div>
+    </section>
+
+    <section class="section" id="cq-fail" hidden>
+      <div class="container narrow center">
+        <p class="eyebrow">Assessment result</p>
+        <h2 id="cq-fail-title" tabindex="-1"></h2>
+        <p class="section-lead">You need 12 to pass. Review the modules below, then try again.</p>
+        <ul class="check" id="cq-review" style="text-align:left;max-width:560px;margin:0 auto 28px"></ul>
+        <button type="button" class="btn btn-primary" id="cq-retry">Retake the assessment</button>
+      </div>
+    </section>
+
+    <section class="section" id="cq-pass" hidden>
+      <div class="container narrow">
+        <p class="eyebrow">Assessment passed</p>
+        <h2 id="cq-pass-title" tabindex="-1"></h2>
+        <p class="section-lead">Now submit your final project. I'll review it within about seven business days and email you your certificate and badge, or specific feedback if anything needs another pass.</p>
+        <div class="card">
+          <form class="form js-form" name="va-certification" method="POST" data-netlify="true" netlify-honeypot="website">
+            <input type="hidden" name="form-name" value="va-certification">
+            <input type="hidden" name="assessment_score">
+            <p class="sr-only" aria-hidden="true"><label>Leave this empty: <input name="website" tabindex="-1" autocomplete="off"></label></p>
+            <div class="form-row">
+              <label>Full name, as it should appear on your certificate<input type="text" name="name" autocomplete="name" required></label>
+              <label>Email you used to buy the course<input type="email" name="email" autocomplete="email" required></label>
+            </div>
+            <label>Who was the project for?
+              <select name="project_for" required>
+                <option value="">Choose one</option>
+                <option>A current client</option>
+                <option>A practice business</option>
+                <option>My own business</option>
+              </select>
+            </label>
+            <label>Workflow you built<input type="text" name="workflow" placeholder="e.g., Morning inbox triage for a 3-person agency" required></label>
+            <label>Link to your project files (optional if you paste them below)<input type="url" name="project_link" placeholder="https://docs.google.com/..."></label>
+            <label>Your project: paste the five items here, or a short summary if you've shared a link<textarea name="project" rows="10" required></textarea></label>
+            <label><span><input type="checkbox" name="network_interest" value="yes"> I'd like to hear about joining the VirtualExpert.net network of AI-trained VAs once I'm certified.</span></label>
+            <label><span><input type="checkbox" name="confirm" value="yes" required> I've removed client names and confidential information, and this is my own work.</span></label>
+            <button type="submit" class="btn btn-primary">Submit my project</button>
+          </form>
+          <p class="form-msg" data-ok role="status" hidden>Thank you! Your project is in. I'll email you within about seven business days.</p>
+          <p class="form-msg form-error" data-error role="alert" hidden>Something went wrong. Please try again, or email your project through the <a href="/contact?topic=other">contact page</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+    // AI-Ready VA assessment. 15 questions, 12 to pass. a = index of the correct option; m = module to review.
+    var CQ = [
+      { m: 1, q: 'Which level of AI service is usually paid as a monthly retainer?', o: ['AI-powered assistant', 'AI workflow builder', 'AI operations partner'], a: 2 },
+      { m: 1, q: 'What are the three habits of an AI operator?', o: ['Notice repetition, write it down, measure it', 'Buy tools, automate everything, bill hourly', 'Use AI quietly, work faster, take more clients'], a: 0 },
+      { m: 2, q: 'A workflow will read a client\'s customer emails. Whose AI account should it run in?', o: ['Your personal account, so you keep control', 'An account the client owns, with you added as a user', 'A free account created just for this client'], a: 1 },
+      { m: 2, q: 'Which list gives the five parts of a strong request?', o: ['Role, context, task, format, check', 'Goal, tone, length, deadline, owner', 'Prompt, file, connector, schedule, review'], a: 0 },
+      { m: 2, q: 'What is the safest way to start a new connector, such as email?', o: ['Give it full access so it can finish tasks', 'Read-only: let it read and draft before it can send or change anything', 'Connect every tool at once so it has context'], a: 1 },
+      { m: 3, q: 'A task needs a document that includes customer account numbers. What should you do?', o: ['Paste it; business plans are private', 'Strip or replace the sensitive details, or summarize it, first', 'Ask the AI to ignore the numbers'], a: 1 },
+      { m: 3, q: 'An AI draft with a wrong price reached a customer. What are your first two steps?', o: ['Fix the instructions, then tell the client next week', 'Stop the workflow, then tell the client the same day', 'Apologize to the customer, then keep the workflow running'], a: 1 },
+      { m: 4, q: 'Which five things do you score each task on in the audit?', o: ['How often, how long, how predictable, whether the information is available, how low the risk is', 'Cost, urgency, client mood, tool, deadline', 'Complexity, creativity, volume, value, visibility'], a: 0 },
+      { m: 4, q: 'A task took 90 minutes, now takes 15 minutes of review, and happens 8 times a month. How many hours a month does it save?', o: ['12 hours', '10 hours', '6 hours'], a: 1 },
+      { m: 4, q: 'When choosing the first three workflows, which mix does the course recommend?', o: ['The three hardest tasks', 'A quick win, a big saver, and one the client will notice', 'Whatever the client mentions first'], a: 1 },
+      { m: 5, q: 'What are the six parts of every workflow?', o: ['Job, instructions, files, connections, trigger, check', 'Goal, prompt, tool, owner, deadline, price', 'Input, output, schedule, budget, review, report'], a: 0 },
+      { m: 5, q: 'When is a workflow ready to put on a schedule?', o: ['After it works once', 'When four out of five real examples are usable with light edits', 'When the client asks for it'], a: 1 },
+      { m: 5, q: 'Which work should never move past the review stage of the autonomy ladder?', o: ['Internal meeting notes', 'Anything involving money, legal commitments, health or public statements', 'Social media drafts the client has approved before'], a: 1 },
+      { m: 6, q: 'What is the test for whether a workflow is properly documented?', o: ['It has a long SOP', 'Someone else could run it if you were away for two weeks', 'The client has a copy of the prompt'], a: 1 },
+      { m: 7, q: 'Workflows save a client $1,200 a month. What setup fee range does the course suggest?', o: ['$120 to $360', '$1,200 to $3,600', '$12,000 or more'], a: 1 }
+    ];
+    var MODULES = { 1: 'Module 1: From assistant to AI operator', 2: 'Module 2: AI foundations for VAs', 3: 'Module 3: Working safely with client data', 4: 'Module 4: Find the AI opportunities', 5: 'Module 5: Build workflows', 6: 'Module 6: Document, hand off and maintain', 7: 'Module 7: Package, price and sell' };
+    var PASS = 12, cqi = 0, picks = [], orders = [];
+    function cqShow(id) { ['cq-intro', 'cq-quiz', 'cq-fail', 'cq-pass'].forEach(function (s) { document.getElementById(s).hidden = s !== id; }); window.scrollTo(0, 0); }
+    function cqRender() {
+      var item = CQ[cqi];
+      document.getElementById('cq-count').textContent = 'Question ' + (cqi + 1) + ' of ' + CQ.length;
+      document.getElementById('cq-bar').style.width = (cqi / CQ.length * 100) + '%';
+      var h = document.getElementById('cq-q'); h.textContent = item.q;
+      var box = document.getElementById('cq-options'); box.innerHTML = '';
+      // Show options in a random order (kept for Back), so the answer isn't always in the same place
+      if (!orders[cqi]) orders[cqi] = item.o.map(function (_, i) { return i; }).sort(function () { return Math.random() - 0.5; });
+      orders[cqi].forEach(function (i) {
+        var text = item.o[i];
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'sc-option' + (picks[cqi] === i ? ' selected' : ''); b.textContent = text;
+        b.addEventListener('click', function () { picks[cqi] = i; cqi++; cqi < CQ.length ? cqRender() : cqFinish(); });
+        box.appendChild(b);
+      });
+      document.getElementById('cq-back').hidden = cqi === 0;
+      h.focus();
+    }
+    function cqFinish() {
+      var score = 0, miss = {};
+      CQ.forEach(function (item, i) { if (picks[i] === item.a) score++; else miss[item.m] = true; });
+      track('va_assessment_complete', { score: score, passed: score >= PASS });
+      if (score >= PASS) {
+        document.querySelector('[name="assessment_score"]').value = score + '/' + CQ.length;
+        document.getElementById('cq-pass-title').textContent = 'You scored ' + score + ' out of ' + CQ.length + '. Well done!';
+        cqShow('cq-pass'); document.getElementById('cq-pass-title').focus();
+      } else {
+        document.getElementById('cq-fail-title').textContent = 'You scored ' + score + ' out of ' + CQ.length + '.';
+        var ul = document.getElementById('cq-review'); ul.innerHTML = '';
+        Object.keys(miss).forEach(function (m) { var li = document.createElement('li'); li.textContent = MODULES[m]; ul.appendChild(li); });
+        cqShow('cq-fail'); document.getElementById('cq-fail-title').focus();
+      }
+    }
+    function cqStart() { cqi = 0; picks = []; orders = []; cqShow('cq-quiz'); cqRender(); track('va_assessment_start', {}); }
+    document.getElementById('cq-start').addEventListener('click', cqStart);
+    document.getElementById('cq-retry').addEventListener('click', cqStart);
+    document.getElementById('cq-back').addEventListener('click', function () { if (cqi > 0) { cqi--; cqRender(); } });
+    </script>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <div class="footer-links">
+        <a href="/blog">Articles</a>
+        <a href="/scorecard">Pipeline scorecard</a>
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/ai-workforce">AI workforce guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/va-course">VA Course</a>
+        <a href="/ai-implementation">AI for companies</a>
+        <a href="/hire-a-va">Hire an AI-trained VA</a>
+        <a href="/become-a-va">Join the VA network</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+      <span>&copy; <span class="year"></span> VirtualExpert.net</span>
+    </div>
+  </footer>
+
+  <script src="/main.js?v=5"></script>
+</body>
+</html>
