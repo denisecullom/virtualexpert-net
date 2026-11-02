@@ -7,7 +7,25 @@ var SETTINGS = {
   checkout: {
     guide: 'https://buy.stripe.com/4gMaEX2Fg084ei2dU387K00',   // The AI Client Playbook + Kit, $29
     agents: 'https://buy.stripe.com/4gM00jcfQbQM4Hs17h87K03',  // 20 AI Agents That Pay for Themselves, $49
-    bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02'   // All three, $59
+    bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02',  // All three, $59
+    // Done-for-you client kits for VAs ($39 each, all four $79)
+    kit_inbox: '',    // Inbox & Calendar Kit, $39
+    kit_social: '',   // Social Content Kit, $39
+    kit_books: '',    // Bookkeeping Prep Kit, $39
+    kit_support: '',  // Customer Support Kit, $39
+    kits_all: '',     // All four kits, $79
+    lab: ''           // AI VA Lab membership, $29/month (Stripe subscription)
+  },
+  // Affiliate links for the /tools page, by tool: claude, chatgpt, fathom, otter,
+  // zapier, calcom, notion, asana, canva. Empty = the plain link to the tool's site.
+  affiliate: {
+    fathom: '',
+    otter: '',
+    zapier: '',
+    calcom: '',
+    notion: '',
+    asana: '',
+    canva: ''
   },
   // Booking link for discovery calls (Calendly, Cal.com, TidyCal, etc.)
   booking: 'https://cal.com/denise-cullom/discovery-call',
@@ -22,6 +40,12 @@ var PRODUCTS = {
   guide: { item_id: 'guide', item_name: 'The AI Client Playbook + Kit', price: 29 },
   agents: { item_id: 'agents', item_name: '20 AI Agents That Pay for Themselves', price: 49 },
   bundle: { item_id: 'bundle', item_name: 'The Complete AI Bundle', price: 59 },
+  kit_inbox: { item_id: 'kit_inbox', item_name: 'Inbox & Calendar Client Kit', price: 39 },
+  kit_social: { item_id: 'kit_social', item_name: 'Social Content Client Kit', price: 39 },
+  kit_books: { item_id: 'kit_books', item_name: 'Bookkeeping Prep Client Kit', price: 39 },
+  kit_support: { item_id: 'kit_support', item_name: 'Customer Support Client Kit', price: 39 },
+  kits_all: { item_id: 'kits_all', item_name: 'All four client kits', price: 79 },
+  lab: { item_id: 'lab', item_name: 'AI VA Lab membership (monthly)', price: 29 },
   // Retired: the Kit is now part of the guide. Kept so /thanks/kit still records old-link purchases.
   templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49 }
 };
@@ -39,12 +63,18 @@ if (SETTINGS.analytics) {
   gtag('config', SETTINGS.analytics);
 }
 
-// Purchases: Stripe sends buyers to /thanks/playbook|agents|bundle?session_id=...
+// Purchases: Stripe sends buyers to /thanks/<page>?session_id=...
 // The session ID doubles as the transaction ID, so a reload isn't counted twice.
-var thanks = window.location.pathname.match(/^\/thanks\/(playbook|agents|kit|bundle)/);
+var THANKS = {
+  playbook: 'guide', agents: 'agents', kit: 'templates', bundle: 'bundle',
+  'kit-inbox': 'kit_inbox', 'kit-social': 'kit_social', 'kit-books': 'kit_books',
+  'kit-support': 'kit_support', kits: 'kits_all', lab: 'lab'
+};
+var thanks = window.location.pathname.match(/^\/thanks\/([a-z-]+?)(?:\.html)?\/?$/);
+if (thanks && !THANKS[thanks[1]]) thanks = null;
 var sessionId = new URLSearchParams(window.location.search).get('session_id');
 if (thanks && sessionId) {
-  var bought = PRODUCTS[{ playbook: 'guide', agents: 'agents', kit: 'templates', bundle: 'bundle' }[thanks[1]]];
+  var bought = PRODUCTS[THANKS[thanks[1]]];
   track('purchase', {
     transaction_id: sessionId,
     value: bought.price,
@@ -53,7 +83,9 @@ if (thanks && sessionId) {
   });
 }
 
-// Buy buttons: <a data-buy="guide|agents|bundle">
+// Buy buttons: <a data-buy="guide|agents|bundle|kit_inbox|...">. A button with
+// data-keep stays visible (pointing at its own href, e.g. the contact form) until
+// its checkout link is added, instead of being hidden.
 var hasCheckout = false;
 var useLemon = false;
 document.querySelectorAll('[data-buy]').forEach(function (btn) {
@@ -82,9 +114,18 @@ if (hasCheckout) {
   document.querySelectorAll('[data-prelaunch]').forEach(function (el) { el.hidden = true; });
   // Hide any buy button whose product has no link yet (its launch list is hidden too)
   document.querySelectorAll('[data-buy]').forEach(function (btn) {
-    if (!SETTINGS.checkout[btn.getAttribute('data-buy')]) btn.hidden = true;
+    if (!SETTINGS.checkout[btn.getAttribute('data-buy')] && !btn.hasAttribute('data-keep')) btn.hidden = true;
   });
 }
+
+// Affiliate links on /tools: <a data-aff="tool"> uses SETTINGS.affiliate[tool] when set
+document.querySelectorAll('[data-aff]').forEach(function (a) {
+  var url = SETTINGS.affiliate[a.getAttribute('data-aff')];
+  if (url) a.href = url;
+  a.addEventListener('click', function () {
+    track('select_content', { content_type: 'tool', item_id: a.getAttribute('data-aff') });
+  });
+});
 
 // Booking buttons: <a data-book>
 if (SETTINGS.booking) {
