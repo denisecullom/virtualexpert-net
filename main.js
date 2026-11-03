@@ -39,27 +39,67 @@ var SETTINGS = {
 
 // Google Analytics: loads only when SETTINGS.analytics has an ID.
 // track() is safe to call either way; it does nothing when analytics is off.
+//
+// The funnel, as GA4 event names (see the funnel guide for the GA4 setup):
+//   1. page_view           every visit (automatic)
+//   2. view_item           a product page: /kits, /guide, /agents, /va-course, /membership
+//   3. email_signup        a free download or list signup (also sent as generate_lead)
+//   4. begin_checkout      a buy button click
+//   5. entry_purchase      a first-step product: kits, Playbook + Kit, Agents, bundle
+//   6. upgrade_purchase    the AI-Ready VA Course or the AI VA Lab membership
+// Every sale also sends the standard GA4 purchase event, which carries the revenue.
+// item_category on each product says which step it belongs to.
 var PRODUCTS = {
-  guide: { item_id: 'guide', item_name: 'The AI Client Playbook + Kit', price: 29 },
-  agents: { item_id: 'agents', item_name: '20 AI Agents That Pay for Themselves', price: 49 },
-  bundle: { item_id: 'bundle', item_name: 'The Complete AI Bundle', price: 59 },
-  kit_inbox: { item_id: 'kit_inbox', item_name: 'Inbox & Calendar Client Kit', price: 39 },
-  kit_social: { item_id: 'kit_social', item_name: 'Social Content Client Kit', price: 39 },
-  kit_books: { item_id: 'kit_books', item_name: 'Bookkeeping Prep Client Kit', price: 39 },
-  kit_support: { item_id: 'kit_support', item_name: 'Customer Support Client Kit', price: 39 },
-  kits_all: { item_id: 'kits_all', item_name: 'All four client kits', price: 79 },
-  lab: { item_id: 'lab', item_name: 'AI VA Lab membership (monthly)', price: 29 },
-  vacourse: { item_id: 'vacourse', item_name: 'The AI-Ready VA Course', price: 297 },
+  guide: { item_id: 'guide', item_name: 'The AI Client Playbook + Kit', price: 29, item_category: 'entry' },
+  agents: { item_id: 'agents', item_name: '20 AI Agents That Pay for Themselves', price: 49, item_category: 'entry' },
+  bundle: { item_id: 'bundle', item_name: 'The Complete AI Bundle', price: 59, item_category: 'entry' },
+  kit_inbox: { item_id: 'kit_inbox', item_name: 'Inbox & Calendar Client Kit', price: 39, item_category: 'entry' },
+  kit_social: { item_id: 'kit_social', item_name: 'Social Content Client Kit', price: 39, item_category: 'entry' },
+  kit_books: { item_id: 'kit_books', item_name: 'Bookkeeping Prep Client Kit', price: 39, item_category: 'entry' },
+  kit_support: { item_id: 'kit_support', item_name: 'Customer Support Client Kit', price: 39, item_category: 'entry' },
+  kits_all: { item_id: 'kits_all', item_name: 'All four client kits', price: 79, item_category: 'entry' },
+  lab: { item_id: 'lab', item_name: 'AI VA Lab membership (monthly)', price: 29, item_category: 'upgrade' },
+  vacourse: { item_id: 'vacourse', item_name: 'The AI-Ready VA Course', price: 297, item_category: 'upgrade' },
   // Retired: the Kit is now part of the guide. Kept so /thanks/kit still records old-link purchases.
-  templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49 },
+  templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49, item_category: 'entry' },
   // VA network: one-time fees paid through Stripe links Denise emails after a hire / an approval
-  placement: { item_id: 'placement', item_name: 'VA placement fee', price: 400 },
-  va_listing: { item_id: 'va_listing', item_name: 'VA network listing fee', price: 49 }
+  placement: { item_id: 'placement', item_name: 'VA placement fee', price: 400, item_category: 'service' },
+  va_listing: { item_id: 'va_listing', item_name: 'VA network listing fee', price: 49, item_category: 'service' }
 };
 window.dataLayer = window.dataLayer || [];
 function gtag() { window.dataLayer.push(arguments); }
 function track(name, params) {
   if (SETTINGS.analytics) gtag('event', name, params || {});
+}
+// track(), then run done() once GA4 has sent the event (or after 1 second),
+// for events sent right before the browser leaves the page.
+function trackThen(name, params, done) {
+  if (!SETTINGS.analytics) { done(); return; }
+  var called = false;
+  function once() { if (!called) { called = true; done(); } }
+  params = params || {};
+  params.event_callback = once;
+  track(name, params);
+  setTimeout(once, 1000);
+}
+// Browser memory for funnel stage and purchases already counted. Private
+// windows can block it, so every use is wrapped and failure is harmless.
+function remember(key, value) {
+  try {
+    if (value === undefined) return window.localStorage.getItem('ve_' + key);
+    window.localStorage.setItem('ve_' + key, value);
+  } catch (e) { return null; }
+}
+// Funnel stage as a GA4 user property: lead -> customer -> upgraded. It only
+// moves forward, and it is sent with every event from then on.
+var STAGES = ['visitor', 'lead', 'customer', 'upgraded'];
+function setStage(stage) {
+  var current = remember('stage') || 'visitor';
+  if (STAGES.indexOf(stage) > STAGES.indexOf(current)) {
+    remember('stage', stage);
+    current = stage;
+  }
+  if (SETTINGS.analytics && current !== 'visitor') gtag('set', 'user_properties', { customer_stage: current });
 }
 if (SETTINGS.analytics) {
   var ga = document.createElement('script');
@@ -67,7 +107,22 @@ if (SETTINGS.analytics) {
   ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + SETTINGS.analytics;
   document.head.appendChild(ga);
   gtag('js', new Date());
+  setStage('visitor'); // re-sends a stored stage before the first page_view
   gtag('config', SETTINGS.analytics);
+}
+
+// Product page views: the step between a visit and a checkout click
+var PRODUCT_PAGES = {
+  guide: ['guide', 'bundle'],
+  agents: ['agents', 'bundle'],
+  kits: ['kit_inbox', 'kit_social', 'kit_books', 'kit_support', 'kits_all'],
+  'va-course': ['vacourse'],
+  membership: ['lab']
+};
+var productPage = window.location.pathname.match(/^\/([a-z-]+?)(?:\.html)?\/?$/);
+if (productPage && PRODUCT_PAGES[productPage[1]]) {
+  var viewed = PRODUCT_PAGES[productPage[1]].map(function (k) { return PRODUCTS[k]; });
+  track('view_item', { value: viewed[0].price, currency: 'USD', items: viewed });
 }
 
 // Purchases: Stripe sends buyers to /thanks/<page>?session_id=...
@@ -83,12 +138,32 @@ if (thanks && !THANKS[thanks[1]]) thanks = null;
 var sessionId = new URLSearchParams(window.location.search).get('session_id');
 if (thanks && sessionId) {
   var bought = PRODUCTS[THANKS[thanks[1]]];
+  var tier = bought.item_category;
+  setStage(tier === 'upgrade' ? 'upgraded' : 'customer');
   track('purchase', {
     transaction_id: sessionId,
     value: bought.price,
     currency: 'USD',
     items: [bought]
   });
+  // GA4 drops repeat purchase events with the same transaction_id, but not
+  // custom events, so remember which sessions this browser already counted.
+  var counted = remember('purchases') || '';
+  if (counted.indexOf(sessionId) === -1) {
+    remember('purchases', (counted + ' ' + sessionId).slice(-2000));
+    var step = { entry: 'entry_purchase', upgrade: 'upgrade_purchase' }[tier];
+    if (step) {
+      track(step, {
+        transaction_id: sessionId,
+        value: bought.price,
+        currency: 'USD',
+        item_id: bought.item_id,
+        item_name: bought.item_name,
+        // true when this browser bought something before: a repeat or upgrade buyer
+        repeat_buyer: counted.trim() ? 'yes' : 'no'
+      });
+    }
+  }
 }
 
 // Buy buttons: <a data-buy="guide|agents|bundle|kit_inbox|...">. A button with
@@ -185,6 +260,31 @@ if (product && productSelect) {
   });
 }
 
+// Which funnel step each form is. Email signups are the free downloads and the
+// mailing list: they send email_signup plus generate_lead (the GA4 standard
+// name, kept so earlier reports keep working).
+var FORMS = {
+  'ai-va-guide': 'email_signup',
+  'ai-workforce': 'email_signup',
+  'free-prompts': 'email_signup',
+  'launch-list': 'email_signup',
+  scorecard: 'email_signup',
+  'va-request': 'hire_request',          // a company asking for a VA
+  'va-application': 'va_application',   // a VA applying to the network
+  'va-certification': 'certification_submit', // a course student sending work
+  contact: 'contact_form_submit',
+  results: 'feedback_submit'           // a buyer sharing results (not a new lead)
+};
+function trackForm(name, done) {
+  var kind = FORMS[name] || 'generate_lead';
+  var params = { form_name: name, page_path: window.location.pathname };
+  if (kind === 'email_signup') {
+    setStage('lead');
+    track('generate_lead', { form_name: name, lead_type: 'email_signup' });
+  }
+  trackThen(kind, params, done || function () {});
+}
+
 // Netlify Forms: submit in place and show a message instead of leaving the page.
 // Each form has class "js-form"; its success/error messages follow it, marked
 // with data-ok and data-error.
@@ -204,15 +304,13 @@ document.querySelectorAll('form.js-form').forEach(function (form) {
       body: new URLSearchParams(new FormData(form)).toString()
     }).then(function (res) {
       if (!res.ok) throw new Error(res.status);
-      // Buyer feedback is not a new lead, so it gets its own event and stays out of the signup numbers
-      var formName = form.getAttribute('name');
-      track(formName === 'contact' ? 'contact_form_submit' : formName === 'results' ? 'feedback_submit' : 'generate_lead', {
-        form_name: formName
-      });
       var next = form.getAttribute('data-next');
-      if (next) { window.location.href = next; return; }
-      if (ok) ok.hidden = false;
-      form.reset();
+      var finish = function () {
+        if (next) { window.location.href = next; return; }
+        if (ok) ok.hidden = false;
+        form.reset();
+      };
+      trackForm(form.getAttribute('name'), finish);
     }).catch(function () {
       if (err) err.hidden = false;
     }).finally(function () {

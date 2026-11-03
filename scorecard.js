@@ -330,7 +330,7 @@ var TIERS = [
       body: new URLSearchParams(new FormData(form)).toString()
     }).then(function (res) {
       if (!res.ok) throw new Error(res.status);
-      track('generate_lead', { form_name: 'scorecard', value: result.total });
+      trackForm('scorecard');
     }).catch(function () {}).finally(function () {
       button.disabled = false;
       renderResults();
