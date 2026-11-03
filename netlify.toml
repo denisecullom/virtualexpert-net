@@ -47,3 +47,8 @@
   for = "/files/*"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+# Serverless functions (netlify/functions/submission-created.js sends
+# free-guide signups to MailerLite after each form submission)
+[functions]
+  directory = "netlify/functions"
