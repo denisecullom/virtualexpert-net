@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free AI Prompt Generator for Virtual Assistants | VirtualExpert.net</title>
+  <meta name="description" content="Build a ready-to-paste AI prompt for client work: inbox, meeting recaps, social posts, support replies, reports and more. Free, runs in your browser.">
+  <link rel="canonical" href="https://virtualexpert.net/ai-prompt-generator">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VirtualExpert.net">
+  <meta property="og:title" content="Free AI Prompt Generator for Virtual Assistants | VirtualExpert.net">
+  <meta property="og:description" content="Build a ready-to-paste AI prompt for client work: inbox, meeting recaps, social posts, support replies, reports and more. Free, runs in your browser.">
+  <meta property="og:url" content="https://virtualexpert.net/ai-prompt-generator">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=7">
+  <link rel="stylesheet" href="/free-tools.css?v=1">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "AI Prompt Generator for Virtual Assistants",
+      "url": "https://virtualexpert.net/ai-prompt-generator",
+      "description": "Builds structured AI prompts (role, context, task, rules, format) for common virtual assistant client tasks. Runs in the browser.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (runs in the browser)",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Denise Cullom",
+        "url": "https://virtualexpert.net/about"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes a good AI prompt for client work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A good prompt tells the AI who it's working for, what the business is like, the exact task, the rules it must follow and the format you want back. Rules matter most for client work: tell it never to invent prices, dates or facts, and to ask you questions instead of guessing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this work with ChatGPT, Claude and Gemini?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The prompts are plain text, so you can paste them into any AI assistant. For work you repeat every week, save the prompt as the instructions in a project, so you only paste the new input each time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my client's information sent anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The generator runs entirely in your browser and nothing you type is sent or stored. Before you paste real client data into any AI tool, check your client has agreed, use a paid plan, and leave out passwords, card numbers and health details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I edit the prompt after I copy it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and you should. Treat it as a strong first draft. Add a real example of the client's writing or a past report, and the results get much better."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="/ai-va-guide">Free VA guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/va-course">VA Course</a>
+        <a href="/kits">VA Kits</a>
+        <a href="/ai-implementation">AI for Companies</a>
+        <a href="/hire-a-va">Hire a VA</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/blog">Articles</a>
+        <a href="/contact" class="btn btn-primary btn-sm">Work with me</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="ft-hero">
+      <div class="container">
+        <p class="eyebrow"><a href="/free-tools" style="color:inherit;text-decoration:none">Free AI tools for VAs</a> · Prompt generator</p>
+        <h1>Build a client-ready <em>AI prompt</em> in a minute.</h1>
+        <p class="lead">Pick the job, tell it about your client, and get a full prompt with the rules that keep AI from making things up. Paste it into ChatGPT, Claude or Gemini.</p>
+        <noscript><p class="form-msg form-error">This tool needs JavaScript. Please turn it on to use it.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section tight" style="padding-top:8px">
+      <div class="container ft-tool">
+        <form class="ft-panel" id="pg-form" novalidate>
+          <h2>The job</h2>
+          <p class="ft-hint">Nothing you type leaves your browser.</p>
+          <div class="ft-fields">
+            <label class="ft-field">What do you need to do?
+              <select id="pg-job"></select>
+            </label>
+            <div class="ft-pair">
+              <label class="ft-field">Client's name
+                <input type="text" id="pg-client" placeholder="e.g. Maria" autocomplete="off">
+              </label>
+              <label class="ft-field">Tone
+                <select id="pg-tone">
+                  <option value="warm">Warm and friendly</option>
+                  <option value="direct">Direct and clear</option>
+                  <option value="formal">Polished and formal</option>
+                  <option value="upbeat">Upbeat</option>
+                  <option value="calm">Calm and reassuring</option>
+                </select>
+              </label>
+            </div>
+            <label class="ft-field">What the business does
+              <input type="text" id="pg-business" placeholder="e.g. a two-person interior design studio in Austin" autocomplete="off">
+            </label>
+            <label class="ft-field">Who their customers are <small>Optional</small>
+              <input type="text" id="pg-audience" placeholder="e.g. busy homeowners renovating for the first time" autocomplete="off">
+            </label>
+            <label class="ft-field" id="pg-platform-wrap" hidden>Platform
+              <input type="text" id="pg-platform" placeholder="e.g. Instagram" autocomplete="off">
+            </label>
+            <label class="ft-field">Anything else the AI should know <small>Optional</small>
+              <textarea id="pg-extra" placeholder="e.g. Never mention pricing. Sign off as 'The team at Studio M'."></textarea>
+            </label>
+          </div>
+        </form>
+
+        <div class="ft-panel ft-out" aria-live="polite">
+          <h2>Your prompt</h2>
+          <p class="ft-hint">Copy it, paste it into your AI assistant, then add the input at the end.</p>
+          <pre class="ft-prompt" id="pg-output"></pre>
+          <button type="button" class="btn btn-light btn-sm" id="pg-copy">Copy prompt</button>
+          <p class="ft-note">Want 15 more tested prompts? Get the <a href="/free-prompts" style="color:#fff">free prompt pack</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container ft-cta">
+        <div>
+          <p class="eyebrow">Free guide for virtual assistants</p>
+          <h2>Prompts are the start. Selling them as a service is the goal.</h2>
+          <p class="section-lead" style="margin-bottom:20px">The free AI-Ready VA Starter Guide shows you how to turn prompts like these into AI services your clients pay for every month, with prices and a pitch you can send today.</p>
+          <ul class="check">
+            <li>10 AI services you can sell this month, with starting prices</li>
+            <li>The setup fee and monthly fee formulas behind these tools</li>
+            <li>A copy-and-paste pitch and a 7-day plan to land your first paid AI service</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Get the AI-Ready VA Starter Guide</h3>
+          <p style="margin-bottom:18px">14-page PDF, free. You'll get it on the next page.</p>
+          <form class="form js-form" name="ai-va-guide" method="POST" data-netlify="true" netlify-honeypot="website" data-next="/ai-va-guide-download">
+            <input type="hidden" name="form-name" value="ai-va-guide">
+            <input type="hidden" name="source" value="prompt-generator">
+            <p class="sr-only" aria-hidden="true"><label>Leave this empty: <input name="website" tabindex="-1" autocomplete="off"></label></p>
+            <label>First name<input type="text" name="name" autocomplete="given-name"></label>
+            <label>Email<input type="email" name="email" autocomplete="email" required></label>
+            <button type="submit" class="btn btn-primary">Send me the free guide</button>
+          </form>
+          <p class="form-consent">Unsubscribe anytime. See the <a href="/privacy">Privacy Policy</a>.</p>
+          <p class="form-msg form-error" data-error role="alert" hidden>Something went wrong. Please try again in a moment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <h2>Questions VAs ask</h2>
+        <div class="faq">
+          <details>
+            <summary>What makes a good AI prompt for client work?</summary>
+            <p>A good prompt tells the AI who it's working for, what the business is like, the exact task, the rules it must follow and the format you want back. Rules matter most for client work: tell it never to invent prices, dates or facts, and to ask you questions instead of guessing.</p>
+          </details>
+          <details>
+            <summary>Does this work with ChatGPT, Claude and Gemini?</summary>
+            <p>Yes. The prompts are plain text, so you can paste them into any AI assistant. For work you repeat every week, save the prompt as the instructions in a project, so you only paste the new input each time.</p>
+          </details>
+          <details>
+            <summary>Is my client's information sent anywhere?</summary>
+            <p>No. The generator runs entirely in your browser and nothing you type is sent or stored. Before you paste real client data into any AI tool, check your client has agreed, use a paid plan, and leave out passwords, card numbers and health details.</p>
+          </details>
+          <details>
+            <summary>Can I edit the prompt after I copy it?</summary>
+            <p>Yes, and you should. Treat it as a strong first draft. Add a real example of the client's writing or a past report, and the results get much better.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container narrow">
+        <div class="ft-share">
+          <h3>Share this tool</h3>
+          <p>Run a VA community, course or blog? You're welcome to link to this calculator. Copy the link below.</p>
+          <code>&lt;a href="https://virtualexpert.net/ai-prompt-generator"&gt;AI Prompt Generator for VAs&lt;/a&gt; (free, by VirtualExpert.net)</code>
+          <button type="button" class="btn btn-ghost btn-sm" data-share-copy="ai-prompt-generator">Copy link code</button>
+          <p class="form-consent" style="margin-top:16px">More free tools: <a href="/ai-rate-calculator">AI service rate calculator</a> · <a href="/hours-saved-calculator">Hours-saved calculator</a> · <a href="/ai-prompt-generator">AI prompt generator</a> · <a href="/scorecard">Client pipeline scorecard</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <div class="footer-links">
+        <a href="/blog">Articles</a>
+        <a href="/ai-va-guide">Free VA guide</a>
+        <a href="/scorecard">Pipeline scorecard</a>
+        <a href="/free-tools">Free AI tools</a>
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/ai-workforce">AI workforce guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/va-course">VA Course</a>
+        <a href="/kits">VA client kits</a>
+        <a href="/membership">AI VA Lab</a>
+        <a href="/tools">AI tools</a>
+        <a href="/ai-implementation">AI for companies</a>
+        <a href="/hire-a-va">Hire an AI-trained VA</a>
+        <a href="/become-a-va">Join the VA network</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+      <span>&copy; <span class="year"></span> VirtualExpert.net</span>
+    </div>
+  </footer>
+
+  <script src="/main.js?v=9"></script>
+  <script src="/free-tools.js?v=1"></script>
+</body>
+</html>
