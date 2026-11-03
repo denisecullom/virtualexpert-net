@@ -1,8 +1,10 @@
 # Netlify config for virtualexpert.net
-# Plain static site: no build step, publish the repo root.
+# Plain static site, publish the repo root. The only build step rebuilds
+# sitemap.xml so new pages and blog articles are listed automatically
+# (it never blocks a deploy: if it fails, the committed sitemap is used).
 [build]
   publish = "."
-  command = ""
+  command = "python3 scripts/build_sitemap.py || true"
 
 # Send the www subdomain to the main domain
 [[redirects]]
