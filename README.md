@@ -25,7 +25,7 @@ Then open http://localhost:8000 in your browser. Press `Ctrl+C` to stop. (Links 
 - `styles.css`: all styles (brand colors as CSS variables in `:root`)
 - `main.js`: mobile menu, footer year, and in-page form submission
   - JS and CSS are cached for a day, so pages load scripts as `/main.js?v=N`. **Bump `v` in every page whenever you change a .js file**, or returning visitors keep the old copy (for example, a buy button for a new product stays hidden).
-- `sitemap.xml`, `robots.txt`: help search engines find every page
+- `sitemap.xml`, `robots.txt`: help search engines find every page. `sitemap.xml` is rebuilt on every Netlify deploy by `scripts/build_sitemap.py`, so new pages and articles are added automatically. Pages with a `noindex` robots tag, `/thanks/*`, `/files/*` and `404.html` are left out. Run `python3 scripts/build_sitemap.py` locally to refresh the committed copy.
 
 ## Making money: the settings block
 
