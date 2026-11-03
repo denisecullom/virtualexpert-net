@@ -174,6 +174,15 @@ if (topic && topicSelect) {
   });
 }
 
+// Pre-select the product on the results form from ?product=... (e.g. /share-your-results?product=kits)
+var product = new URLSearchParams(window.location.search).get('product');
+var productSelect = document.querySelector('form[name="results"] select[name="product"]');
+if (product && productSelect) {
+  Array.prototype.forEach.call(productSelect.options, function (opt) {
+    if (opt.value === product) productSelect.value = product;
+  });
+}
+
 // Netlify Forms: submit in place and show a message instead of leaving the page.
 // Each form has class "js-form"; its success/error messages follow it, marked
 // with data-ok and data-error.
@@ -193,8 +202,10 @@ document.querySelectorAll('form.js-form').forEach(function (form) {
       body: new URLSearchParams(new FormData(form)).toString()
     }).then(function (res) {
       if (!res.ok) throw new Error(res.status);
-      track(form.getAttribute('name') === 'contact' ? 'contact_form_submit' : 'generate_lead', {
-        form_name: form.getAttribute('name')
+      // Buyer feedback is not a new lead, so it gets its own event and stays out of the signup numbers
+      var formName = form.getAttribute('name');
+      track(formName === 'contact' ? 'contact_form_submit' : formName === 'results' ? 'feedback_submit' : 'generate_lead', {
+        form_name: formName
       });
       var next = form.getAttribute('data-next');
       if (next) { window.location.href = next; return; }

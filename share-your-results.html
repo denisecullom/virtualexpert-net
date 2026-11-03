@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Share your results | VirtualExpert.net</title>
+  <meta name="description" content="Tell me how a VirtualExpert.net product worked for you. Five minutes, and nothing is published without your approval.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://virtualexpert.net/share-your-results">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VirtualExpert.net">
+  <meta property="og:title" content="Share your results | VirtualExpert.net">
+  <meta property="og:description" content="Tell me how a VirtualExpert.net product worked for you. Five minutes, and nothing is published without your approval.">
+  <meta property="og:url" content="https://virtualexpert.net/share-your-results">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=8">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="/ai-va-guide">Free VA guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/va-course">VA Course</a>
+        <a href="/kits">VA Kits</a>
+        <a href="/ai-implementation">AI for Companies</a>
+        <a href="/hire-a-va">Hire a VA</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/blog">Articles</a>
+        <a href="/contact" class="btn btn-primary btn-sm">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container narrow">
+        <p class="eyebrow">Share your results</p>
+        <h1>How did it go?</h1>
+        <p class="lead">If you've used something from VirtualExpert.net, I'd love to hear what happened, good or bad. It takes about five minutes. Honest answers help me improve the products, and with your permission, a few stories may become short case studies that help other VAs decide.</p>
+        <div class="card" style="margin:28px 0">
+          <h3>A few promises</h3>
+          <ul class="check">
+            <li>Nothing is published unless you choose a sharing option below.</li>
+            <li>I'll send you the exact wording to approve before anything goes live.</li>
+            <li>I never invent or round up results. If you're not sure of a number, say so.</li>
+            <li>"It didn't work for me" is useful too. Tell me why and I'll fix it.</li>
+          </ul>
+        </div>
+        <div>
+          <form class="form js-form" name="results" method="POST" data-netlify="true" netlify-honeypot="website">
+            <input type="hidden" name="form-name" value="results">
+            <p class="sr-only" aria-hidden="true"><label>Leave this empty: <input name="website" tabindex="-1" autocomplete="off"></label></p>
+            <div class="form-row">
+              <label>Name<input type="text" name="name" autocomplete="name" required></label>
+              <label>Email you used to buy<input type="email" name="email" autocomplete="email" required></label>
+            </div>
+            <label>What did you use?
+              <select name="product" required>
+                <option value="">Choose one</option>
+                <option value="va-course">The AI-Ready VA Course</option>
+                <option value="kits">A VA client kit</option>
+                <option value="lab">The AI VA Lab membership</option>
+                <option value="guide">The AI Client Playbook + Kit</option>
+                <option value="agents">20 AI Agents That Pay for Themselves</option>
+                <option value="bundle">The Complete AI Bundle</option>
+                <option value="placement">A VA placement (I hired a VA)</option>
+                <option value="va-network">The VA network (I'm a listed VA)</option>
+                <option value="free">A free guide or the prompts</option>
+                <option value="other">Something else</option>
+              </select>
+            </label>
+            <div class="form-row">
+              <label>What do you do?<input type="text" name="role" placeholder="e.g., VA for two real estate agents"></label>
+              <label>How long have you been using it?
+                <select name="time_using">
+                  <option value="">Choose one</option>
+                  <option>Less than 2 weeks</option>
+                  <option>2 to 4 weeks</option>
+                  <option>1 to 3 months</option>
+                  <option>More than 3 months</option>
+                </select>
+              </label>
+            </div>
+            <label>Before: what was the problem or situation?<textarea name="before" rows="3" placeholder="e.g., Inbox triage for my main client took about an hour every morning." required></textarea></label>
+            <label>What did you actually do with it?<textarea name="what_you_did" rows="3" placeholder="e.g., Set up the triage workflow from Module 4 and the client's AI use agreement." required></textarea></label>
+            <label>After: what changed? Include numbers if you have them, and say if they're estimates.<textarea name="result" rows="4" placeholder="e.g., Triage now takes about 20 minutes. The client added 5 hours a month to my retainer." required></textarea></label>
+            <label>How do you know? (optional)<input type="text" name="evidence" placeholder="e.g., Time tracker, invoice, client email, my own estimate"></label>
+            <label>What was hard, confusing or missing? (optional)<textarea name="improve" rows="3"></textarea></label>
+            <label>In a sentence or two, what would you tell another VA about it? (optional)<textarea name="quote" rows="3"></textarea></label>
+            <fieldset class="form-choices">
+              <legend>Can I share your story?</legend>
+              <label><span><input type="radio" name="permission" value="full-name" required> Yes, with my name, role and website or LinkedIn</span></label>
+              <label><span><input type="radio" name="permission" value="first-name"> Yes, with my first name and role only</span></label>
+              <label><span><input type="radio" name="permission" value="anonymous"> Yes, but anonymously</span></label>
+              <label><span><input type="radio" name="permission" value="private"> No, this is just feedback for you</span></label>
+            </fieldset>
+            <label>Website or LinkedIn (optional)<input type="url" name="link" placeholder="https://"></label>
+            <label><span><input type="checkbox" name="interview" value="yes"> I'm happy to answer a few follow-up questions by email for a fuller case study.</span></label>
+            <label><span><input type="checkbox" name="confirm" value="yes" required> These are my real results, and I've left out client names and confidential details.</span></label>
+            <button type="submit" class="btn btn-primary">Send my results</button>
+          </form>
+          <p class="form-consent">I'll use this to improve the products and, only if you said yes above, to write a case study you approve first. See the <a href="/privacy">Privacy Policy</a>.</p>
+          <p class="form-msg" data-ok role="status" hidden>Thank you! I read every one of these. If you said yes to sharing, I'll email you a draft to approve before anything is published.</p>
+          <p class="form-msg form-error" data-error role="alert" hidden>Something went wrong. Please try again, or send your answers through the <a href="/contact?topic=other">contact page</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <div class="footer-links">
+        <a href="/blog">Articles</a>
+        <a href="/ai-va-guide">Free VA guide</a>
+        <a href="/scorecard">Pipeline scorecard</a>
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/ai-workforce">AI workforce guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/va-course">VA Course</a>
+        <a href="/kits">VA client kits</a>
+        <a href="/membership">AI VA Lab</a>
+        <a href="/tools">AI tools</a>
+        <a href="/ai-implementation">AI for companies</a>
+        <a href="/hire-a-va">Hire an AI-trained VA</a>
+        <a href="/become-a-va">Join the VA network</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+      <span>&copy; <span class="year"></span> VirtualExpert.net</span>
+    </div>
+  </footer>
+
+  <script src="/main.js?v=8"></script>
+</body>
+</html>

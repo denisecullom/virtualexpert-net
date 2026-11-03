@@ -47,3 +47,15 @@
   for = "/files/*"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+# Feedback form and results page: not for search until real case studies exist.
+# Remove the /results block when you launch the results page (see results.html).
+[[headers]]
+  for = "/share-your-results"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/results"
+  [headers.values]
+    X-Robots-Tag = "noindex"
