@@ -22,12 +22,12 @@ Then open http://localhost:8000 in your browser. Press `Ctrl+C` to stop. (Links 
 - `thanks/`: download pages Stripe sends buyers to (`playbook`, `agents`, `bundle`; `kit` stays for buyers of the retired $49 Kit link)
 - `consulting.html`: **Client Pipeline Audit**, 1:1 consulting
 - `share-your-results.html`: buyer feedback form (`/share-your-results?product=kits` pre-selects the product). Every download page in `thanks/` links to it. Noindex.
-- `results.html`: case study page, **hidden** (noindex, unlinked, not in the sitemap) until there are at least three real, approved stories. The launch steps and the case study HTML template are in the comment at the top of the file. Never add a result a customer didn't report and approve.
+- `results.html`: case study page, **hidden** (noindex, unlinked, so the sitemap script skips it) until there are at least three real, approved stories. The launch steps and the case study HTML template are in the comment at the top of the file. Never add a result a customer didn't report and approve.
 - `about.html`, `contact.html`, `privacy.html`, `404.html`
 - `styles.css`: all styles (brand colors as CSS variables in `:root`)
 - `main.js`: mobile menu, footer year, and in-page form submission
   - JS and CSS are cached for a day, so pages load scripts as `/main.js?v=N`. **Bump `v` in every page whenever you change a .js file**, or returning visitors keep the old copy (for example, a buy button for a new product stays hidden).
-- `sitemap.xml`, `robots.txt`: help search engines find every page
+- `sitemap.xml`, `robots.txt`: help search engines find every page. `sitemap.xml` is rebuilt on every Netlify deploy by `scripts/build_sitemap.py`, so new pages and articles are added automatically. Pages with a `noindex` robots tag, `/thanks/*`, `/files/*` and `404.html` are left out. Run `python3 scripts/build_sitemap.py` locally to refresh the committed copy.
 
 ## Making money: the settings block
 
