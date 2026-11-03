@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free AI Hours-Saved Calculator for Virtual Assistants | VirtualExpert.net</title>
+  <meta name="description" content="Show a client how many hours a month AI could save their business, what that time is worth, and a ready-to-send summary. Free tool for VAs.">
+  <link rel="canonical" href="https://virtualexpert.net/hours-saved-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VirtualExpert.net">
+  <meta property="og:title" content="Free AI Hours-Saved Calculator for Virtual Assistants | VirtualExpert.net">
+  <meta property="og:description" content="Show a client how many hours a month AI could save their business, what that time is worth, and a ready-to-send summary. Free tool for VAs.">
+  <meta property="og:url" content="https://virtualexpert.net/hours-saved-calculator">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=7">
+  <link rel="stylesheet" href="/free-tools.css?v=1">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "AI Hours-Saved Calculator",
+      "url": "https://virtualexpert.net/hours-saved-calculator",
+      "description": "Estimates the hours a month and dollar value AI-assisted admin work could save a small business, for virtual assistants to show their clients.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (runs in the browser)",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Denise Cullom",
+        "url": "https://virtualexpert.net/about"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many hours can AI save a small business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the work. Routine writing and sorting, like inbox replies, meeting recaps and weekly reports, often drops by about half once AI does the first draft and a person checks it. A small business that spends 15 to 20 hours a week on admin can often get back 25 to 40 hours a month."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do the time-saved percentages come from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They are deliberately conservative estimates of how much of each task AI can take off when a VA sets it up well and still checks the output. Meeting notes and reports save the most, because AI is strong at summarizing. Scheduling and bookkeeping save less, because they need more checking. Change the hours to match your client and the totals update."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I use this with a client?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fill it in with the client on a call, or ask them roughly how many hours a week go on each task. Then copy the summary into an email. Showing the hours and the dollar value first makes the price of your service feel small next to what they get back."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I charge once I know the hours saved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A good starting monthly fee is about a quarter of the value of the hours saved. The calculator shows that number. To work out your setup fee too, use the AI service rate calculator."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="/ai-va-guide">Free VA guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/va-course">VA Course</a>
+        <a href="/kits">VA Kits</a>
+        <a href="/ai-implementation">AI for Companies</a>
+        <a href="/hire-a-va">Hire a VA</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/blog">Articles</a>
+        <a href="/contact" class="btn btn-primary btn-sm">Work with me</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="ft-hero">
+      <div class="container">
+        <p class="eyebrow"><a href="/free-tools" style="color:inherit;text-decoration:none">Free AI tools for VAs</a> · Hours-saved calculator</p>
+        <h1>How much time could AI give <em>your client</em> back?</h1>
+        <p class="lead">Tick the tasks your client's week goes on, adjust the hours, and see the hours saved each month and what they're worth. Then copy a summary you can send in your next email.</p>
+        <noscript><p class="form-msg form-error">This tool needs JavaScript. Please turn it on to use it.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section tight" style="padding-top:8px">
+      <div class="container ft-tool">
+        <form class="ft-panel" id="hs-form" novalidate>
+          <h2>Your client's week</h2>
+          <p class="ft-hint">Tick each task they (or their team) do, and the hours a week it takes today.</p>
+          <div class="ft-task-head" aria-hidden="true"><span></span><span>Task</span><span>Hrs / week</span></div>
+          <div class="ft-tasks" id="hs-tasks"></div>
+          <div class="ft-fields" style="margin-top:20px">
+            <label class="ft-field">Client's hourly value
+              <span class="ft-money"><input type="number" id="hs-value" min="0" step="1" value="75" inputmode="decimal"></span>
+              <small>For an owner, what they'd pay to buy an hour back. For staff, hourly pay plus about 30%.</small>
+            </label>
+          </div>
+        </form>
+
+        <div class="ft-panel ft-out" aria-live="polite">
+          <h2>Time AI could give back</h2>
+          <p class="ft-hint">Based on AI doing the first pass and you checking it.</p>
+          <p class="ft-label">Hours saved</p>
+          <p class="ft-big" id="hs-monthly">-</p>
+          <div class="ft-rows">
+            <div><span>Per week</span><b id="hs-weekly">-</b></div>
+            <div><span>Value to the business</span><b id="hs-value-out">-</b></div>
+            <div><span>Over a year</span><b id="hs-year">-</b></div>
+            <div><span>Suggested monthly fee for you</span><b id="hs-fee">-</b></div>
+          </div>
+          <p class="ft-label">Biggest wins</p>
+          <p class="ft-note" id="hs-top" style="margin-top:0"></p>
+          <p class="ft-label">Summary to send your client</p>
+          <div class="ft-copybox" id="hs-summary"></div>
+          <button type="button" class="btn btn-light btn-sm" id="hs-copy">Copy summary</button>
+          <p class="ft-note">Next: price it with the <a href="/ai-rate-calculator" style="color:#fff">rate calculator</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container ft-cta">
+        <div>
+          <p class="eyebrow">Free guide for virtual assistants</p>
+          <h2>Turn those hours into a paid AI service.</h2>
+          <p class="section-lead" style="margin-bottom:20px">The free AI-Ready VA Starter Guide shows you how to package the biggest time-savers as services, what to charge, and how to pitch your current clients this week.</p>
+          <ul class="check">
+            <li>10 AI services you can sell this month, with starting prices</li>
+            <li>The setup fee and monthly fee formulas behind these tools</li>
+            <li>A copy-and-paste pitch and a 7-day plan to land your first paid AI service</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Get the AI-Ready VA Starter Guide</h3>
+          <p style="margin-bottom:18px">14-page PDF, free. You'll get it on the next page.</p>
+          <form class="form js-form" name="ai-va-guide" method="POST" data-netlify="true" netlify-honeypot="website" data-next="/ai-va-guide-download">
+            <input type="hidden" name="form-name" value="ai-va-guide">
+            <input type="hidden" name="source" value="hours-saved-calculator">
+            <p class="sr-only" aria-hidden="true"><label>Leave this empty: <input name="website" tabindex="-1" autocomplete="off"></label></p>
+            <label>First name<input type="text" name="name" autocomplete="given-name"></label>
+            <label>Email<input type="email" name="email" autocomplete="email" required></label>
+            <button type="submit" class="btn btn-primary">Send me the free guide</button>
+          </form>
+          <p class="form-consent">Unsubscribe anytime. See the <a href="/privacy">Privacy Policy</a>.</p>
+          <p class="form-msg form-error" data-error role="alert" hidden>Something went wrong. Please try again in a moment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <h2>Questions VAs ask</h2>
+        <div class="faq">
+          <details>
+            <summary>How many hours can AI save a small business?</summary>
+            <p>It depends on the work. Routine writing and sorting, like inbox replies, meeting recaps and weekly reports, often drops by about half once AI does the first draft and a person checks it. A small business that spends 15 to 20 hours a week on admin can often get back 25 to 40 hours a month.</p>
+          </details>
+          <details>
+            <summary>Where do the time-saved percentages come from?</summary>
+            <p>They are deliberately conservative estimates of how much of each task AI can take off when a VA sets it up well and still checks the output. Meeting notes and reports save the most, because AI is strong at summarizing. Scheduling and bookkeeping save less, because they need more checking. Change the hours to match your client and the totals update.</p>
+          </details>
+          <details>
+            <summary>How do I use this with a client?</summary>
+            <p>Fill it in with the client on a call, or ask them roughly how many hours a week go on each task. Then copy the summary into an email. Showing the hours and the dollar value first makes the price of your service feel small next to what they get back.</p>
+          </details>
+          <details>
+            <summary>What should I charge once I know the hours saved?</summary>
+            <p>A good starting monthly fee is about a quarter of the value of the hours saved. The calculator shows that number. To work out your setup fee too, use the <a href='/ai-rate-calculator'>AI service rate calculator</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container narrow">
+        <div class="ft-share">
+          <h3>Share this tool</h3>
+          <p>Run a VA community, course or blog? You're welcome to link to this calculator. Copy the link below.</p>
+          <code>&lt;a href="https://virtualexpert.net/hours-saved-calculator"&gt;AI Hours-Saved Calculator for VAs&lt;/a&gt; (free, by VirtualExpert.net)</code>
+          <button type="button" class="btn btn-ghost btn-sm" data-share-copy="hours-saved-calculator">Copy link code</button>
+          <p class="form-consent" style="margin-top:16px">More free tools: <a href="/ai-rate-calculator">AI service rate calculator</a> · <a href="/hours-saved-calculator">Hours-saved calculator</a> · <a href="/ai-prompt-generator">AI prompt generator</a> · <a href="/scorecard">Client pipeline scorecard</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <div class="footer-links">
+        <a href="/blog">Articles</a>
+        <a href="/ai-va-guide">Free VA guide</a>
+        <a href="/scorecard">Pipeline scorecard</a>
+        <a href="/free-tools">Free AI tools</a>
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/ai-workforce">AI workforce guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/va-course">VA Course</a>
+        <a href="/kits">VA client kits</a>
+        <a href="/membership">AI VA Lab</a>
+        <a href="/tools">AI tools</a>
+        <a href="/ai-implementation">AI for companies</a>
+        <a href="/hire-a-va">Hire an AI-trained VA</a>
+        <a href="/become-a-va">Join the VA network</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+      <span>&copy; <span class="year"></span> VirtualExpert.net</span>
+    </div>
+  </footer>
+
+  <script src="/main.js?v=7"></script>
+  <script src="/free-tools.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free AI Service Rate Calculator for Virtual Assistants | VirtualExpert.net</title>
+  <meta name="description" content="Work out what to charge for an AI service: a setup fee, a monthly fee and your real hourly rate. Free calculator for virtual assistants.">
+  <link rel="canonical" href="https://virtualexpert.net/ai-rate-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VirtualExpert.net">
+  <meta property="og:title" content="Free AI Service Rate Calculator for Virtual Assistants | VirtualExpert.net">
+  <meta property="og:description" content="Work out what to charge for an AI service: a setup fee, a monthly fee and your real hourly rate. Free calculator for virtual assistants.">
+  <meta property="og:url" content="https://virtualexpert.net/ai-rate-calculator">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=7">
+  <link rel="stylesheet" href="/free-tools.css?v=1">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "AI Service Rate Calculator for Virtual Assistants",
+      "url": "https://virtualexpert.net/ai-rate-calculator",
+      "description": "Calculates a setup fee and a value-based monthly fee for an AI service a virtual assistant sets up and runs for a client.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (runs in the browser)",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Denise Cullom",
+        "url": "https://virtualexpert.net/about"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much should a VA charge for AI services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Charge a one-time setup fee for building the system plus a monthly fee for running it. A simple setup fee is your build hours times your hourly rate times 1.5. For the monthly fee, start at about a quarter of what the hours you save the client are worth, and never go below what your own running time costs. Many small-business AI services start around $300 to $600 setup and $150 to $300 a month."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why not just charge by the hour for AI work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because AI makes you faster, hourly billing means the better you get, the less you earn. Pricing the setup and the monthly running fee separately ties your pay to the result the client gets, not the minutes you spend."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the client's hourly value?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's what an hour of the client's (or their team's) time is worth to the business. For an owner, use what they'd pay to buy that hour back, often $50 to $150. For a staff member, use their hourly pay plus about 30% for benefits and overhead. If you're unsure, ask the client: \"What's an hour of your time worth to you?\""
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should tool costs be included in my fee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. If you pay for a tool to run the client's service, such as a paid AI plan, an automation tool or a transcription app, add it to the monthly costs field. The calculator makes sure your monthly fee covers it. If the client pays for the tools on their own account, leave it at zero."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="/ai-va-guide">Free VA guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/va-course">VA Course</a>
+        <a href="/kits">VA Kits</a>
+        <a href="/ai-implementation">AI for Companies</a>
+        <a href="/hire-a-va">Hire a VA</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/blog">Articles</a>
+        <a href="/contact" class="btn btn-primary btn-sm">Work with me</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="ft-hero">
+      <div class="container">
+        <p class="eyebrow"><a href="/free-tools" style="color:inherit;text-decoration:none">Free AI tools for VAs</a> · Rate calculator</p>
+        <h1>What should you charge for <em>AI work</em>?</h1>
+        <p class="lead">AI makes you faster, so hourly billing pays you less for better work. Enter a few numbers about one AI service and get a setup fee, a monthly fee, your real hourly rate and a pitch line to send your client.</p>
+        <noscript><p class="form-msg form-error">This tool needs JavaScript. Please turn it on to use it.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section tight" style="padding-top:8px">
+      <div class="container ft-tool">
+        <form class="ft-panel" id="rc-form" novalidate>
+          <h2>Your service</h2>
+          <p class="ft-hint">Use one service, such as inbox triage or a weekly report. Results update as you type.</p>
+          <div class="ft-fields">
+            <label class="ft-field">Your hourly rate today
+              <span class="ft-money"><input type="number" id="rc-rate" min="0" step="1" value="40" inputmode="decimal"></span>
+            </label>
+            <div class="ft-pair">
+              <label class="ft-field">Hours to build and test it
+                <input type="number" id="rc-build" min="0" step="0.5" value="5" inputmode="decimal">
+                <small>One-time setup</small>
+              </label>
+              <label class="ft-field">Hours a month to run it
+                <input type="number" id="rc-run" min="0" step="0.5" value="2" inputmode="decimal">
+                <small>Checking, fixing, reporting</small>
+              </label>
+            </div>
+            <div class="ft-pair">
+              <label class="ft-field">Hours it saves the client a month
+                <input type="number" id="rc-saved" min="0" step="0.5" value="12" inputmode="decimal">
+                <small>Not sure? Try the <a href="/hours-saved-calculator">hours-saved calculator</a></small>
+              </label>
+              <label class="ft-field">Client's hourly value
+                <span class="ft-money"><input type="number" id="rc-value" min="0" step="1" value="75" inputmode="decimal"></span>
+                <small>What an hour of their time is worth</small>
+              </label>
+            </div>
+            <label class="ft-field">Tool costs you pay each month for this client
+              <span class="ft-money"><input type="number" id="rc-tools" min="0" step="1" value="0" inputmode="decimal"></span>
+              <small>Leave at 0 if the client pays for the tools</small>
+            </label>
+          </div>
+        </form>
+
+        <div class="ft-panel ft-out" aria-live="polite">
+          <h2>What to charge</h2>
+          <p class="ft-hint">Rounded to the nearest $25.</p>
+          <p class="ft-label">Setup fee</p>
+          <p class="ft-big" id="rc-setup">-</p>
+          <p class="ft-label">Monthly fee</p>
+          <p class="ft-big" id="rc-monthly">-</p>
+          <p class="ft-note" id="rc-basis"></p>
+          <div class="ft-rows">
+            <div><span>Your real hourly rate on this service</span><b id="rc-effective">-</b></div>
+            <div><span>If you billed your running hours instead</span><b id="rc-hourly-compare">-</b></div>
+            <div><span>Value of the time saved to your client</span><b id="rc-client-value">-</b></div>
+            <div><span>First-year revenue from this client</span><b id="rc-first-year">-</b></div>
+          </div>
+          <p class="ft-label">Your pitch line</p>
+          <div class="ft-copybox" id="rc-pitch"></div>
+          <button type="button" class="btn btn-light btn-sm" id="rc-copy">Copy pitch line</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container narrow">
+        <h2>How the calculator works</h2>
+        <p><strong>Setup fee = build hours &times; your hourly rate &times; 1.5.</strong> The extra half covers what you had to learn to build it at all, and the fact that the client keeps a system that works after you've finished.</p>
+        <p><strong>Monthly fee = hours saved a month &times; client's hourly value &divide; 4.</strong> The client keeps three quarters of the value, which makes it an easy yes. If that comes out below what your own running time and tools cost, the calculator uses your costs instead, so you never run a service at a loss.</p>
+        <p>These are starting points for small-business clients in the US. Adjust them for your market and experience, and raise your prices as you collect results.</p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container ft-cta">
+        <div>
+          <p class="eyebrow">Free guide for virtual assistants</p>
+          <h2>Know what to charge. Now know what to sell.</h2>
+          <p class="section-lead" style="margin-bottom:20px">The free AI-Ready VA Starter Guide lists 10 AI services clients will pay for, with setup times and starting prices, plus the exact pitch to send a current client.</p>
+          <ul class="check">
+            <li>10 AI services you can sell this month, with starting prices</li>
+            <li>The setup fee and monthly fee formulas behind these tools</li>
+            <li>A copy-and-paste pitch and a 7-day plan to land your first paid AI service</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Get the AI-Ready VA Starter Guide</h3>
+          <p style="margin-bottom:18px">14-page PDF, free. You'll get it on the next page.</p>
+          <form class="form js-form" name="ai-va-guide" method="POST" data-netlify="true" netlify-honeypot="website" data-next="/ai-va-guide-download">
+            <input type="hidden" name="form-name" value="ai-va-guide">
+            <input type="hidden" name="source" value="rate-calculator">
+            <p class="sr-only" aria-hidden="true"><label>Leave this empty: <input name="website" tabindex="-1" autocomplete="off"></label></p>
+            <label>First name<input type="text" name="name" autocomplete="given-name"></label>
+            <label>Email<input type="email" name="email" autocomplete="email" required></label>
+            <button type="submit" class="btn btn-primary">Send me the free guide</button>
+          </form>
+          <p class="form-consent">Unsubscribe anytime. See the <a href="/privacy">Privacy Policy</a>.</p>
+          <p class="form-msg form-error" data-error role="alert" hidden>Something went wrong. Please try again in a moment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <h2>Questions VAs ask</h2>
+        <div class="faq">
+          <details>
+            <summary>How much should a VA charge for AI services?</summary>
+            <p>Charge a one-time setup fee for building the system plus a monthly fee for running it. A simple setup fee is your build hours times your hourly rate times 1.5. For the monthly fee, start at about a quarter of what the hours you save the client are worth, and never go below what your own running time costs. Many small-business AI services start around $300 to $600 setup and $150 to $300 a month.</p>
+          </details>
+          <details>
+            <summary>Why not just charge by the hour for AI work?</summary>
+            <p>Because AI makes you faster, hourly billing means the better you get, the less you earn. Pricing the setup and the monthly running fee separately ties your pay to the result the client gets, not the minutes you spend.</p>
+          </details>
+          <details>
+            <summary>What is the client's hourly value?</summary>
+            <p>It's what an hour of the client's (or their team's) time is worth to the business. For an owner, use what they'd pay to buy that hour back, often $50 to $150. For a staff member, use their hourly pay plus about 30% for benefits and overhead. If you're unsure, ask the client: "What's an hour of your time worth to you?"</p>
+          </details>
+          <details>
+            <summary>Should tool costs be included in my fee?</summary>
+            <p>Yes. If you pay for a tool to run the client's service, such as a paid AI plan, an automation tool or a transcription app, add it to the monthly costs field. The calculator makes sure your monthly fee covers it. If the client pays for the tools on their own account, leave it at zero.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container narrow">
+        <div class="ft-share">
+          <h3>Share this tool</h3>
+          <p>Run a VA community, course or blog? You're welcome to link to this calculator. Copy the link below.</p>
+          <code>&lt;a href="https://virtualexpert.net/ai-rate-calculator"&gt;AI Service Rate Calculator for VAs&lt;/a&gt; (free, by VirtualExpert.net)</code>
+          <button type="button" class="btn btn-ghost btn-sm" data-share-copy="ai-rate-calculator">Copy link code</button>
+          <p class="form-consent" style="margin-top:16px">More free tools: <a href="/ai-rate-calculator">AI service rate calculator</a> · <a href="/hours-saved-calculator">Hours-saved calculator</a> · <a href="/ai-prompt-generator">AI prompt generator</a> · <a href="/scorecard">Client pipeline scorecard</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="/" class="logo">VirtualExpert<span>.net</span></a>
+      <div class="footer-links">
+        <a href="/blog">Articles</a>
+        <a href="/ai-va-guide">Free VA guide</a>
+        <a href="/scorecard">Pipeline scorecard</a>
+        <a href="/free-tools">Free AI tools</a>
+        <a href="/free-prompts">Free prompts</a>
+        <a href="/ai-workforce">AI workforce guide</a>
+        <a href="/guide">Playbook + Kit</a>
+        <a href="/agents">AI Agents</a>
+        <a href="/va-course">VA Course</a>
+        <a href="/kits">VA client kits</a>
+        <a href="/membership">AI VA Lab</a>
+        <a href="/tools">AI tools</a>
+        <a href="/ai-implementation">AI for companies</a>
+        <a href="/hire-a-va">Hire an AI-trained VA</a>
+        <a href="/become-a-va">Join the VA network</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+      <span>&copy; <span class="year"></span> VirtualExpert.net</span>
+    </div>
+  </footer>
+
+  <script src="/main.js?v=7"></script>
+  <script src="/free-tools.js?v=1"></script>
+</body>
+</html>
