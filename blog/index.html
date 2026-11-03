@@ -26,16 +26,12 @@
       <a href="/" class="logo">VirtualExpert<span>.net</span></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <nav class="nav-links" id="nav-links" aria-label="Main">
-        <a href="/ai-va-guide">Free VA guide</a>
-        <a href="/guide">Playbook + Kit</a>
-        <a href="/agents">AI Agents</a>
-        <a href="/va-course">VA Course</a>
         <a href="/kits">VA Kits</a>
-        <a href="/ai-implementation">AI for Companies</a>
-        <a href="/hire-a-va">Hire a VA</a>
-        <a href="/consulting">Consulting</a>
+        <a href="/va-course">VA Course</a>
+        <a href="/membership">AI VA Lab</a>
         <a href="/blog" aria-current="page">Articles</a>
-        <a href="/contact" class="btn btn-primary btn-sm">Work with me</a>
+        <a href="/ai-implementation">For businesses</a>
+        <a href="/ai-va-guide" class="btn btn-primary btn-sm">Free VA guide</a>
       </nav>
     </div>
   </header>
@@ -46,7 +42,7 @@
       <div class="container narrow">
         <p class="eyebrow">Articles</p>
         <h1>Get clients with AI, one practical step at a time.</h1>
-        <p class="lead">Plain-English guides for freelancers, virtual assistants, consultants and coaches, with prompts you can copy and use today.</p>
+        <p class="lead">Plain-English guides for virtual assistants, freelancers, consultants and coaches, with prompts you can copy and use today.</p>
       </div>
     </section>
 
@@ -163,12 +159,20 @@
       <div class="container">
         <div class="band">
           <div>
-            <p class="eyebrow" style="color:#7dd3c8">Free 3-minute scorecard</p>
-            <h2>How healthy is your client pipeline?</h2>
-            <p>Answer 10 quick questions and get a score out of 100, your three biggest leaks, and what to fix first.</p>
+            <p class="eyebrow" style="color:#7dd3c8">Free guide for VAs</p>
+            <h2>10 AI services you can sell to your clients this month.</h2>
+            <p>The AI-Ready VA Starter Guide: what each service does, what to charge, a pitch you can send today and a 7-day plan to land your first one.</p>
           </div>
           <div>
-            <a href="/scorecard" class="btn btn-light">Take the free scorecard</a>
+            <form class="inline-form js-form" name="ai-va-guide" method="POST" data-netlify="true" netlify-honeypot="website" data-next="/ai-va-guide-download">
+              <input type="hidden" name="form-name" value="ai-va-guide">
+              <input type="hidden" name="source" value="blog">
+              <p class="sr-only" aria-hidden="true"><label>Leave this empty: <input name="website" tabindex="-1" autocomplete="off"></label></p>
+              <label class="sr-only" for="va-email">Email</label>
+              <input id="va-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              <button type="submit" class="btn btn-light">Send me the guide</button>
+            </form>
+            <p class="form-msg form-error" data-error role="alert" hidden>Something went wrong. Please try again in a moment.</p>
           </div>
         </div>
       </div>

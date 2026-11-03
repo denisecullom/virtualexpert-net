@@ -267,7 +267,7 @@ ul.check li::before { content: ""; position: absolute; left: 0; top: 0.5em; widt
   .band { padding: 36px 28px; }
 }
 /* Collapse the menu before its links start wrapping */
-@media (max-width: 1340px) {
+@media (max-width: 880px) {
   .nav-toggle { display: block; }
   .nav-links {
     display: none; position: absolute; top: 68px; left: 0; right: 0;
