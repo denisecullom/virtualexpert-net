@@ -25,6 +25,10 @@ var LAUNCH_LIST = {
   'default': 'Launch List'
 };
 
+// Every VirtualExpert signup also joins this site-wide group, which keeps
+// VirtualExpert subscribers apart from Denise's other sites in the same account.
+var SITE_GROUP = 'VirtualExpert';
+
 var API = 'https://connect.mailerlite.com/api';
 
 function groupFor(form, data) {
@@ -70,16 +74,16 @@ exports.handler = async function (event) {
   }
 
   try {
-    var id = await groupId(group, key);
+    var ids = [await groupId(SITE_GROUP, key), await groupId(group, key)];
     var fields = {};
     if (data.name) fields.name = String(data.name).trim().split(/\s+/)[0];
     // Adds the subscriber, or adds the group to an existing subscriber
     // without removing any groups they are already in.
     await ml('/subscribers', key, {
       method: 'POST',
-      body: JSON.stringify({ email: email, fields: fields, groups: [id] })
+      body: JSON.stringify({ email: email, fields: fields, groups: ids })
     });
-    console.log('Added ' + form + ' signup to MailerLite group "' + group + '"');
+    console.log('Added ' + form + ' signup to MailerLite groups "' + SITE_GROUP + '" and "' + group + '"');
     return { statusCode: 200, body: 'ok' };
   } catch (err) {
     // Log and carry on: the submission is already saved in Netlify Forms.
