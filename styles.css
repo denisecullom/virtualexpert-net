@@ -357,3 +357,18 @@ ul.check li::before { content: ""; position: absolute; left: 0; top: 0.5em; widt
   .sc-dial-num b { font-size: 3rem; }
   .sc-area { grid-template-columns: 110px 1fr 44px; gap: 10px; }
 }
+
+/* Feedback form choices and results page */
+.form input[type="checkbox"], .form input[type="radio"] { padding: 0; width: auto; margin: 0 8px 0 0; accent-color: var(--teal); vertical-align: -2px; }
+.form-choices { border: 0; padding: 0; margin: 0; display: grid; gap: 10px; }
+.form-choices legend { font-size: 0.92rem; font-weight: 600; margin-bottom: 8px; }
+.form-choices label { font-weight: 400; }
+.case h3 { margin-bottom: 16px; }
+.case-facts { display: grid; gap: 10px; margin: 0 0 18px; }
+.case-facts dt { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal); }
+.case-facts dd { margin: 2px 0 0; color: var(--muted); }
+.case blockquote { margin: 0 0 14px; padding-left: 16px; border-left: 3px solid var(--accent); font-family: var(--serif); font-style: italic; font-size: 1.08rem; }
+.case-meta { font-size: 0.85rem; }
+.case-empty { grid-column: 1 / -1; text-align: center; }
+.case-empty .btn { margin-top: 10px; }
+.case-note { text-align: center; margin-top: 28px; }

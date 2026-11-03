@@ -251,6 +251,15 @@ if (topic && topicSelect) {
   });
 }
 
+// Pre-select the product on the results form from ?product=... (e.g. /share-your-results?product=kits)
+var product = new URLSearchParams(window.location.search).get('product');
+var productSelect = document.querySelector('form[name="results"] select[name="product"]');
+if (product && productSelect) {
+  Array.prototype.forEach.call(productSelect.options, function (opt) {
+    if (opt.value === product) productSelect.value = product;
+  });
+}
+
 // Which funnel step each form is. Email signups are the free downloads and the
 // mailing list: they send email_signup plus generate_lead (the GA4 standard
 // name, kept so earlier reports keep working).
@@ -263,7 +272,8 @@ var FORMS = {
   'va-request': 'hire_request',          // a company asking for a VA
   'va-application': 'va_application',   // a VA applying to the network
   'va-certification': 'certification_submit', // a course student sending work
-  contact: 'contact_form_submit'
+  contact: 'contact_form_submit',
+  results: 'feedback_submit'           // a buyer sharing results (not a new lead)
 };
 function trackForm(name, done) {
   var kind = FORMS[name] || 'generate_lead';

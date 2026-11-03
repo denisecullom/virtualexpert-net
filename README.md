@@ -21,6 +21,8 @@ Then open http://localhost:8000 in your browser. Press `Ctrl+C` to stop. (Links 
 - `agents.html`: **20 AI Agents That Pay for Themselves**, $49 book (20 agent builds in Claude or ChatGPT, with a savings calculator)
 - `thanks/`: download pages Stripe sends buyers to (`playbook`, `agents`, `bundle`; `kit` stays for buyers of the retired $49 Kit link)
 - `consulting.html`: **Client Pipeline Audit**, 1:1 consulting
+- `share-your-results.html`: buyer feedback form (`/share-your-results?product=kits` pre-selects the product). Every download page in `thanks/` links to it. Noindex.
+- `results.html`: case study page, **hidden** (noindex, unlinked, so the sitemap script skips it) until there are at least three real, approved stories. The launch steps and the case study HTML template are in the comment at the top of the file. Never add a result a customer didn't report and approve.
 - `about.html`, `contact.html`, `privacy.html`, `404.html`
 - `styles.css`: all styles (brand colors as CSS variables in `:root`)
 - `main.js`: mobile menu, footer year, and in-page form submission
@@ -47,6 +49,7 @@ All forms use Netlify Forms. Submissions appear in the Netlify dashboard under *
 - **contact**: contact and discovery-call requests
 - **free-prompts**: lead-magnet signups (homepage and `/free-prompts`)
 - **scorecard**: scorecard leads, with their score, tier, business stage, weakest area, recommended offer and every answer
+- **results**: buyer feedback and results, with their sharing permission (`full-name`, `first-name`, `anonymous` or `private`). Tracked in GA4 as `feedback_submit`, not `generate_lead`
 - **launch-list**: "notify me" signups, with a `product` field (`guide` or `templates`, from before launch)
 
 Forms only work on the live site, not in the local preview. To get emailed on each submission, add a notification in Netlify under **Site configuration → Notifications → Emails and webhooks → Form submission notifications**.
