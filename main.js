@@ -1,5 +1,7 @@
 // ---------------------------------------------------------------------------
-// MONEY SETTINGS: paste your links here, then push. Nothing else to change.
+// MONEY SETTINGS: paste your links here, then push. Buy buttons in the HTML also
+// carry the same Stripe link in their href, so checkout works without JavaScript
+// or a cached old main.js. If you change a link here, change it in the HTML too.
 // Leave a link empty ('') and its buttons fall back to the launch list or the
 // contact form, so the site never shows a broken button.
 var SETTINGS = {
