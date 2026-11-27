@@ -17,7 +17,7 @@ var SETTINGS = {
     kit_support: 'https://buy.stripe.com/fZufZhcfQ2gcei203d87K0g',  // Customer Support Kit, $49
     kits_all: 'https://buy.stripe.com/3cIcN53Jk5soei2bLV87K0h',     // All four kits, $99
     lab: 'https://buy.stripe.com/5kQaEX0x8f2Yb5QeY787K0c',          // AI VA Lab membership, $29/month (Stripe subscription)
-    vacourse: 'https://buy.stripe.com/eVq9AT1Bc8EAei217h87K04', // The AI-Ready VA Course, $297 (code FOUNDINGVA = $100 off)
+    vacourse: 'https://buy.stripe.com/eVq9AT1Bc8EAei217h87K04', // The AI-Ready VA Course, $297
     vacourse_kits: 'https://buy.stripe.com/aFa9AT5RsdYUc9U9DN87K0i'  // Course + all four kits, $347
   },
   // Affiliate links for the /tools page, by tool: claude, chatgpt, fathom, otter,
