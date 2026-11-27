@@ -34,7 +34,10 @@ var SETTINGS = {
   // Booking link for discovery calls (Calendly, Cal.com, TidyCal, etc.)
   booking: 'https://cal.com/denise-cullom/discovery-call',
   // Google Analytics 4 measurement ID (looks like 'G-XXXXXXXXXX'). Empty = off.
-  analytics: 'G-MSFM4M96VB'
+  analytics: 'G-MSFM4M96VB',
+  // Meta (Facebook/Instagram) pixel ID, digits only, from Events Manager. Empty = off.
+  // When set: PageView on every page, Lead on free-download signups, Purchase on /thanks pages.
+  metaPixel: ''
 };
 // ---------------------------------------------------------------------------
 
@@ -115,6 +118,20 @@ if (SETTINGS.analytics) {
   gtag('config', SETTINGS.analytics);
 }
 
+// Meta pixel: loads only when SETTINGS.metaPixel has an ID.
+function fbTrack(name, params) {
+  if (SETTINGS.metaPixel && window.fbq) window.fbq('track', name, params || {});
+}
+if (SETTINGS.metaPixel) {
+  (function (f, b, e, v, n, t, s) {
+    if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = true; n.version = '2.0'; n.queue = [];
+    t = b.createElement(e); t.async = true; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+  })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+  window.fbq('init', SETTINGS.metaPixel);
+  window.fbq('track', 'PageView');
+}
+
 // Product page views: the step between a visit and a checkout click
 var PRODUCT_PAGES = {
   guide: ['guide', 'bundle'],
@@ -156,6 +173,7 @@ if (thanks && sessionId) {
   var counted = remember('purchases') || '';
   if (counted.indexOf(sessionId) === -1) {
     remember('purchases', (counted + ' ' + sessionId).slice(-2000));
+    fbTrack('Purchase', { value: bought.price, currency: 'USD', content_ids: [bought.item_id] });
     var step = { entry: 'entry_purchase', upgrade: 'upgrade_purchase' }[tier];
     if (step) {
       track(step, {
@@ -291,6 +309,7 @@ function trackForm(name, done) {
   if (kind === 'email_signup') {
     setStage('lead');
     track('generate_lead', { form_name: name, lead_type: 'email_signup' });
+    fbTrack('Lead', { content_name: name });
   }
   trackThen(kind, params, done || function () {});
 }
