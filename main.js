@@ -11,15 +11,14 @@ var SETTINGS = {
     agents: 'https://buy.stripe.com/4gM00jcfQbQM4Hs17h87K03',  // 20 AI Agents That Pay for Themselves, $49
     bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02',  // All three, $59
     // Done-for-you client kits for VAs ($49 each, all four $99).
-    // TODO before merge: swap in new $49 / $99 Stripe links (these old links still charge $39 / $79).
-    kit_inbox: 'https://buy.stripe.com/eVq00j93E2gcb5QbLV87K07',    // Inbox & Calendar Kit, $49
-    kit_social: 'https://buy.stripe.com/7sY4gz3Jk1c87TEdU387K08',   // Social Content Kit, $49
-    kit_books: 'https://buy.stripe.com/00wdR93Jk3kgei203d87K09',    // Bookkeeping Prep Kit, $49
-    kit_support: 'https://buy.stripe.com/4gM4gz3Jk2gca1M03d87K0a',  // Customer Support Kit, $49
-    kits_all: 'https://buy.stripe.com/7sY00jgw62gcgqa6rB87K0b',     // All four kits, $99
+    kit_inbox: 'https://buy.stripe.com/aFa5kDenY2gc4Hsg2b87K0d',    // Inbox & Calendar Kit, $49
+    kit_social: 'https://buy.stripe.com/5kQ5kDdjU2gc7TE6rB87K0e',   // Social Content Kit, $49
+    kit_books: 'https://buy.stripe.com/eVq14ncfQ3kgfm65nx87K0f',    // Bookkeeping Prep Kit, $49
+    kit_support: 'https://buy.stripe.com/fZufZhcfQ2gcei203d87K0g',  // Customer Support Kit, $49
+    kits_all: 'https://buy.stripe.com/3cIcN53Jk5soei2bLV87K0h',     // All four kits, $99
     lab: 'https://buy.stripe.com/5kQaEX0x8f2Yb5QeY787K0c',          // AI VA Lab membership, $29/month (Stripe subscription)
     vacourse: 'https://buy.stripe.com/eVq9AT1Bc8EAei217h87K04', // The AI-Ready VA Course, $297 (code FOUNDINGVA = $100 off)
-    vacourse_kits: ''  // Course + all four kits, $347. TODO: add the Stripe link (redirect to /thanks/va-course-kits)
+    vacourse_kits: 'https://buy.stripe.com/aFa9AT5RsdYUc9U9DN87K0i'  // Course + all four kits, $347
   },
   // Affiliate links for the /tools page, by tool: claude, chatgpt, fathom, otter,
   // zapier, calcom, notion, asana, canva. Empty = the plain link to the tool's site.
