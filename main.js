@@ -10,14 +10,16 @@ var SETTINGS = {
     guide: 'https://buy.stripe.com/4gMaEX2Fg084ei2dU387K00',   // The AI Client Playbook + Kit, $29
     agents: 'https://buy.stripe.com/4gM00jcfQbQM4Hs17h87K03',  // 20 AI Agents That Pay for Themselves, $49
     bundle: 'https://buy.stripe.com/eVq5kDgw6aMI1vgdU387K02',  // All three, $59
-    // Done-for-you client kits for VAs ($39 each, all four $79)
-    kit_inbox: 'https://buy.stripe.com/eVq00j93E2gcb5QbLV87K07',    // Inbox & Calendar Kit, $39
-    kit_social: 'https://buy.stripe.com/7sY4gz3Jk1c87TEdU387K08',   // Social Content Kit, $39
-    kit_books: 'https://buy.stripe.com/00wdR93Jk3kgei203d87K09',    // Bookkeeping Prep Kit, $39
-    kit_support: 'https://buy.stripe.com/4gM4gz3Jk2gca1M03d87K0a',  // Customer Support Kit, $39
-    kits_all: 'https://buy.stripe.com/7sY00jgw62gcgqa6rB87K0b',     // All four kits, $79
+    // Done-for-you client kits for VAs ($49 each, all four $99).
+    // TODO before merge: swap in new $49 / $99 Stripe links (these old links still charge $39 / $79).
+    kit_inbox: 'https://buy.stripe.com/eVq00j93E2gcb5QbLV87K07',    // Inbox & Calendar Kit, $49
+    kit_social: 'https://buy.stripe.com/7sY4gz3Jk1c87TEdU387K08',   // Social Content Kit, $49
+    kit_books: 'https://buy.stripe.com/00wdR93Jk3kgei203d87K09',    // Bookkeeping Prep Kit, $49
+    kit_support: 'https://buy.stripe.com/4gM4gz3Jk2gca1M03d87K0a',  // Customer Support Kit, $49
+    kits_all: 'https://buy.stripe.com/7sY00jgw62gcgqa6rB87K0b',     // All four kits, $99
     lab: 'https://buy.stripe.com/5kQaEX0x8f2Yb5QeY787K0c',          // AI VA Lab membership, $29/month (Stripe subscription)
-    vacourse: 'https://buy.stripe.com/eVq9AT1Bc8EAei217h87K04'  // The AI-Ready VA Course, $297 (code FOUNDINGVA = $100 off)
+    vacourse: 'https://buy.stripe.com/eVq9AT1Bc8EAei217h87K04', // The AI-Ready VA Course, $297 (code FOUNDINGVA = $100 off)
+    vacourse_kits: ''  // Course + all four kits, $347. TODO: add the Stripe link (redirect to /thanks/va-course-kits)
   },
   // Affiliate links for the /tools page, by tool: claude, chatgpt, fathom, otter,
   // zapier, calcom, notion, asana, canva. Empty = the plain link to the tool's site.
@@ -53,18 +55,21 @@ var PRODUCTS = {
   guide: { item_id: 'guide', item_name: 'The AI Client Playbook + Kit', price: 29, item_category: 'entry' },
   agents: { item_id: 'agents', item_name: '20 AI Agents That Pay for Themselves', price: 49, item_category: 'entry' },
   bundle: { item_id: 'bundle', item_name: 'The Complete AI Bundle', price: 59, item_category: 'entry' },
-  kit_inbox: { item_id: 'kit_inbox', item_name: 'Inbox & Calendar Client Kit', price: 39, item_category: 'entry' },
-  kit_social: { item_id: 'kit_social', item_name: 'Social Content Client Kit', price: 39, item_category: 'entry' },
-  kit_books: { item_id: 'kit_books', item_name: 'Bookkeeping Prep Client Kit', price: 39, item_category: 'entry' },
-  kit_support: { item_id: 'kit_support', item_name: 'Customer Support Client Kit', price: 39, item_category: 'entry' },
-  kits_all: { item_id: 'kits_all', item_name: 'All four client kits', price: 79, item_category: 'entry' },
+  kit_inbox: { item_id: 'kit_inbox', item_name: 'Inbox & Calendar Client Kit', price: 49, item_category: 'entry' },
+  kit_social: { item_id: 'kit_social', item_name: 'Social Content Client Kit', price: 49, item_category: 'entry' },
+  kit_books: { item_id: 'kit_books', item_name: 'Bookkeeping Prep Client Kit', price: 49, item_category: 'entry' },
+  kit_support: { item_id: 'kit_support', item_name: 'Customer Support Client Kit', price: 49, item_category: 'entry' },
+  kits_all: { item_id: 'kits_all', item_name: 'All four client kits', price: 99, item_category: 'entry' },
   lab: { item_id: 'lab', item_name: 'AI VA Lab membership (monthly)', price: 29, item_category: 'upgrade' },
   vacourse: { item_id: 'vacourse', item_name: 'The AI-Ready VA Course', price: 297, item_category: 'upgrade' },
+  vacourse_kits: { item_id: 'vacourse_kits', item_name: 'The AI-Ready VA Course + all four client kits', price: 347, item_category: 'upgrade' },
   // Retired: the Kit is now part of the guide. Kept so /thanks/kit still records old-link purchases.
   templates: { item_id: 'templates', item_name: 'The AI Client Kit', price: 49, item_category: 'entry' },
   // VA network: one-time fees paid through Stripe links Denise emails after a hire / an approval
   placement: { item_id: 'placement', item_name: 'VA placement fee', price: 400, item_category: 'service' },
-  va_listing: { item_id: 'va_listing', item_name: 'VA network listing fee', price: 49, item_category: 'service' }
+  va_listing: { item_id: 'va_listing', item_name: 'VA network listing fee', price: 49, item_category: 'service' },
+  // AI Quick-Start Setup for companies: paid through a Stripe link Denise emails once the scope is agreed
+  quickstart: { item_id: 'quickstart', item_name: 'AI Quick-Start Setup', price: 1950, item_category: 'service' }
 };
 window.dataLayer = window.dataLayer || [];
 function gtag() { window.dataLayer.push(arguments); }
@@ -131,7 +136,8 @@ var THANKS = {
   playbook: 'guide', agents: 'agents', kit: 'templates', bundle: 'bundle',
   'kit-inbox': 'kit_inbox', 'kit-social': 'kit_social', 'kit-books': 'kit_books',
   'kit-support': 'kit_support', kits: 'kits_all', lab: 'lab', 'va-course': 'vacourse',
-  placement: 'placement', 'va-listing': 'va_listing'
+  'va-course-kits': 'vacourse_kits', placement: 'placement', 'va-listing': 'va_listing',
+  'quick-start': 'quickstart'
 };
 var thanks = window.location.pathname.match(/^\/thanks\/([a-z-]+?)(?:\.html)?\/?$/);
 if (thanks && !THANKS[thanks[1]]) thanks = null;
@@ -204,6 +210,11 @@ document.querySelectorAll('[data-buy]').forEach(function (btn) {
   var product = btn.getAttribute('data-buy');
   if (SETTINGS.checkout[product] || btn.hasAttribute('data-keep')) return;
   if (hasCheckout || document.querySelector('[data-prelaunch="' + product + '"]')) btn.hidden = true;
+});
+
+// Upsell boxes (data-upsell="product") stay hidden until that product has a checkout link
+document.querySelectorAll('[data-upsell]').forEach(function (el) {
+  if (!SETTINGS.checkout[el.getAttribute('data-upsell')]) el.hidden = true;
 });
 
 // Affiliate links on /tools: <a data-aff="tool"> uses SETTINGS.affiliate[tool] when set
